@@ -24,8 +24,8 @@
 
 
 
-#ifndef _CircularDoublyLinkedList_h
-#define _CircularDoublyLinkedList_h
+#ifndef CircularDoublyLinkedList_h
+#define CircularDoublyLinkedList_h
 
 
 
@@ -145,4 +145,4 @@ bool is_empty(p_node_t *head_ref);
 p_node_t delete_node(p_node_t *head_ref, p_node_t delete);
 
 
-#endif /* _CircularDoublyLinkedList_h */
+#endif /* CircularDoublyLinkedList_h */
