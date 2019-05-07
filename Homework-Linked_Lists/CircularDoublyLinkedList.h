@@ -79,7 +79,7 @@ p_node_t insert_new_node_after_node(p_node_t *head_ref, int prev_data, int data)
 p_node_t delete_node_at_index(p_node_t *head_ref, unsigned int index);
 
 /**
- * @brief Function to delete a node with a given data.
+ * @brief Function to delete a node with given data.
  * @param head_ref pointer to the head node pointer.
  * @param data data of the node to delete.
  * @return p_node_t pointer to the head node.
@@ -106,7 +106,7 @@ void sort_list(p_node_t *head_ref);
 // Help functions
 
 /**
- * @brief Function to insert the first node with a given data.
+ * @brief Function to insert the first node with given data.
  * @param head_ref pointer to the head node pointer.
  * @param data data of the new node.
  * @return p_node_t pointer to the head node.
@@ -114,7 +114,7 @@ void sort_list(p_node_t *head_ref);
 p_node_t insert_first_node(p_node_t *head_ref, int data);
 
 /**
- * @brief Function to insert a new head node with a given data.
+ * @brief Function to insert a new head node with given data.
  * @param head_ref pointer to the head node pointer.
  * @param data data of the new node.
  * @return p_node_t pointer to the head node.
@@ -122,7 +122,7 @@ p_node_t insert_first_node(p_node_t *head_ref, int data);
 p_node_t insert_new_head(p_node_t *head_ref, int data);
 
 /**
- * @brief Function to insert a new tail node with a given data.
+ * @brief Function to insert a new tail node with given data.
  * @param head_ref pointer to the head node pointer.
  * @param data data of the new node.
  * @return p_node_t pointer to the head node.
@@ -137,7 +137,7 @@ p_node_t insert_new_tail(p_node_t *head_ref, int data);
 bool is_empty(p_node_t *head_ref);
 
 /**
- * @brief Function to insert a new tail node with a given data.
+ * @brief Function to insert a new tail node with given data.
  * @param head_ref pointer to the head node pointer.
  * @param delete pointer to the node to delete.
  * @return p_node_t pointer to the head node.
