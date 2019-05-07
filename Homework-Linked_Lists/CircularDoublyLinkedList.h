@@ -53,7 +53,7 @@ typedef struct Node {
 typedef node_t *p_node_t;
 
 /**
- * @brief Function to insert a new node at given position.
+ * @brief Function to insert a new node at given index.
  * @param head_ref pointer to the head node pointer.
  * @param index position in the node chain.
  * @param data data of the new node.

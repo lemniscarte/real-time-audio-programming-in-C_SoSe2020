@@ -233,18 +233,18 @@ p_node_t insert_node_at_index(p_node_t *head_ref, unsigned int index, int data)
     // Get head pointer
     p_node_t temp = *head_ref;
     
-    // Search position
+    // Search index
     // Step through the list
     int i = 0;
     
-    do {// Find position
-        // Create and insert new node at position
+    do {// Find index
+        // Create and insert new node at index
         if (i == index) {
             
             // Creating new node
             p_node_t new_node = new_node_with_data(data);
             
-            // Insert new_node at position.
+            // Insert new_node at index.
             new_node->prev = temp->prev;
             new_node->next = temp;
             temp->prev->next = new_node;
@@ -265,7 +265,7 @@ p_node_t insert_node_at_index(p_node_t *head_ref, unsigned int index, int data)
         *head_ref = insert_new_tail(head_ref, data);
         
     } else {
-        printf("Entered position not possible, list only have %d nodes\n", i);
+        printf("Entered index not possible, list only have %d nodes\n", i);
     }
     
     return *head_ref;
@@ -315,10 +315,10 @@ p_node_t delete_node_at_index(p_node_t *head_ref, unsigned int index)
     // Set node to delete to the head
     p_node_t temp = *head_ref;
     
-    // Search position
+    // Search index
     unsigned int i=0;
     do {
-        // Create and insert new node after position
+        // Create and insert new node after index
         if (i == index) return delete_node(head_ref, temp);
         temp = temp->next;
         
@@ -328,7 +328,7 @@ p_node_t delete_node_at_index(p_node_t *head_ref, unsigned int index)
     } while (temp != *head_ref);
     
     // Message if the user request exceeds the list length
-    if (index > i) printf("Entered position not possible, list only have %d nodes\n", i);
+    if (index > i) printf("Entered index not possible, list only have %d nodes\n", i);
     
     return *head_ref;
 }
@@ -343,7 +343,7 @@ p_node_t delete_node_with_data(p_node_t *head_ref, int data)
     // Get head reference
     p_node_t temp = *head_ref;
     
-    // Search position of data
+    // Search index of data
     do {
         if (temp->data == data) return delete_node(head_ref, temp);
         temp = temp->next;
