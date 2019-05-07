@@ -31,7 +31,7 @@ int main() {
     // Start with an empty list
     p_node_t head = NULL;
     
-    // Holds menue data
+    // Hold menue data
     unsigned int choice, index;
     int data, prev_node_data;
 
