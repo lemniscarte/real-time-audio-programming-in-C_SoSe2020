@@ -14,7 +14,7 @@
  *
  *  @date 30.04.19. – first implementation
  *
- *  @todo write more functions (e. g. sum() or mult() all elements)
+ *  @todo write more functions (e. g. @c sum() or @c mult() all elements)
  *
  *  @bug if you found one - report it!
  *
