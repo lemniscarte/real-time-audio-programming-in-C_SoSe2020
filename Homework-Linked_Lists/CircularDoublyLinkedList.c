@@ -8,7 +8,7 @@
  *  @author Markus Hädrich markus.haedrich@tu-berlin.de
  *
  *  @discussion Course: Real-Time Audio Programing in C\n
- *  Supervisor: Markus Hädrich, TU-Berlin\n
+ *  Supervisors: Thomas Resch, Markus Hädrich, (TU-Berlin)\n
  *  This is one possible solution for the\n
  *  homework about linked lists.
  *
