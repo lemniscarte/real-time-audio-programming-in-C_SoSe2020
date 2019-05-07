@@ -26,7 +26,7 @@
 
 
 
-int main() {
+int main(int argc, char* argv[]) {
 
     // Start with an empty list
     p_node_t head = NULL;
