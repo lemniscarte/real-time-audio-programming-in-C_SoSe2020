@@ -28,7 +28,7 @@
 
 int main() {
 
-    // Start with the empty list
+    // Start with an empty list
     p_node_t head = NULL;
     
     // Holds menue data
