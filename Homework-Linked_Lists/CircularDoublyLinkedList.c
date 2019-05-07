@@ -99,6 +99,7 @@ int main() {
 }
 
 
+
 // Function Implementations
 
 bool is_empty(p_node_t *head_ref) {
@@ -115,6 +116,7 @@ p_node_t new_node_with_data(int value) {
     
     return new_node;
 }
+
 
 
 p_node_t insert_first_node(p_node_t *head_ref, int data)
@@ -188,7 +190,6 @@ p_node_t insert_new_head(p_node_t *head_ref, int data)
 
 
 
-
 p_node_t insert_new_tail(p_node_t *head_ref, int data)
 {
     // If the list is empty, create a single node
@@ -221,6 +222,7 @@ p_node_t insert_new_tail(p_node_t *head_ref, int data)
     
     return *head_ref;
 }
+
 
 
 p_node_t insert_node_at_index(p_node_t *head_ref, unsigned int index, int data)
@@ -354,6 +356,7 @@ p_node_t delete_node_with_data(p_node_t *head_ref, int data)
 }
 
 
+
 p_node_t delete_node(p_node_t *head_ref, p_node_t del)
 {
     // Error check
@@ -375,6 +378,7 @@ p_node_t delete_node(p_node_t *head_ref, p_node_t del)
     
     return *head_ref;
 }
+
 
 
 void sort_list(p_node_t *head_ref) {
