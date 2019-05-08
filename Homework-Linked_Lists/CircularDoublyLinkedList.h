@@ -37,7 +37,7 @@
 
 /**
  * @typedef struct Node with data element and two struct Node pointers.
- * @brief Node of a circular doubly linked list
+ * @brief Node linked list
  * @discussion A typedef of a node of a circular doubly linked list.
  */
 typedef struct Node {
