@@ -58,7 +58,8 @@
 
 
 /**
- * @enum Enum that holds the defined data types.
+ * @brief Enum that is used in an atom struct type.
+ * @enum Holds the defined data types of an atom struct type.
  */
 enum simpleAtomTypes {UNDEFINED, INTEGER, FLOAT};
 
