@@ -2,17 +2,13 @@
 /*************************************************************/
 /**
  *  @file SimpleAtom.c
- *  @brief Example 1/2 how to implement overloading in C
+ *  @brief Example of a simple atom type that is used in Pure Data
  *  @author Thomas Resch, thomas.resch@campus.tu-berlin.de\n
  *          Markus Hädrich, markus.haedrich@tu-berlin.de
  *
  *  @discussion Course: Real-Time Audio Programing in C\n
  *  Supervisors: Thomas Resch, Markus Hädrich, (TU-Berlin)\n
  *
- *  However, overloading for your own functions is not supported in C.
- *  There are different approaches for achieving this kind of behavior,
- *  all have advantages and disadvantages, depending on what you are trying
- *  to do. This is one possible example.
  *
  *  @date 09.05.19. – first implementation
  *
