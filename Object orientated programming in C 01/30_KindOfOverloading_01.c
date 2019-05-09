@@ -8,6 +8,7 @@
  *
  *  @discussion Course: Real-Time Audio Programing in C\n
  *  Supervisors: Thomas Resch, Markus Hädrich, (TU-Berlin)\n
+ *  "Object oriented programming in C - session 01"
  *
  *  However, overloading for your own functions is not supported in C.
  *  There are different approaches for achieving this kind of behavior,

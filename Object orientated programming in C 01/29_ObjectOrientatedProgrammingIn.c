@@ -1,18 +1,19 @@
-///*************************************************************/
-///**
-// *  @file ObjectOrientatedProgrammingIn.c
-// *  @brief Example how to use structs
-// *  @author Thomas Resch, thomas.resch@campus.tu-berlin.de
-// *
-// *  @discussion Course: Real-Time Audio Programing in C\n
-// *  Supervisors: Thomas Resch, Markus Hädrich, (TU-Berlin)\n
-// *
-// *  @date 09.05.19. – first implementation
-// *
-// *  @bug if you found one - report it!
-// *
-// *  @version 0.42
-// **************************************************************/
+/*************************************************************/
+/**
+ *  @file ObjectOrientatedProgrammingIn.c
+ *  @brief Example how to use structs
+ *  @author Thomas Resch, thomas.resch@campus.tu-berlin.de
+ *
+ *  @discussion Course: Real-Time Audio Programing in C\n
+ *  Supervisors: Thomas Resch, Markus Hädrich, (TU-Berlin)\n
+ *  "Object oriented programming in C - session 01"
+ *
+ *  @date 09.05.19. – first implementation
+ *
+ *  @bug if you found one - report it!
+ *
+ *  @version 0.42
+ **************************************************************/
 
 
 

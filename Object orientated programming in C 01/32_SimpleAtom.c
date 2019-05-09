@@ -8,7 +8,7 @@
  *
  *  @discussion Course: Real-Time Audio Programing in C\n
  *  Supervisors: Thomas Resch, Markus Hädrich, (TU-Berlin)\n
- *
+ *  "Object oriented programming in C - session 01"
  *
  *  @date 09.05.19. – first implementation
  *

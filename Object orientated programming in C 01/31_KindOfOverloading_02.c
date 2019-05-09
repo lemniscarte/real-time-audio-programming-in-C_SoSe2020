@@ -7,6 +7,7 @@
  *
  *  @discussion Course: Real-Time Audio Programing in C\n
  *  Supervisors: Thomas Resch, Markus Hädrich, (TU-Berlin)\n
+ *  "Object oriented programming in C - session 01"
  *
  *  Task: Write a function, which takes the type as a first \n
  *  argument (a char pointer) and then chooses between the int \n
