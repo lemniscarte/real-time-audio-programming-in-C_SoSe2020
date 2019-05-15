@@ -63,11 +63,11 @@ typedef struct registeredIntObject
     new newMethod;              /**< Initializer method. */
     bling blingMethod;          /**< Just a name for a method. */
     int argc;                   /**< Index count in the lookup table. */
-} registeredIntObject;
+} t_registeredIntObject;
 
 
 /** @brief Lookup table for your objects. */
-registeredIntObject objectLookupTable[MAXNUMBEROFOBJECTS];
+t_registeredIntObject objectLookupTable[MAXNUMBEROFOBJECTS];
 int currentIndex = 0;
 
 
