@@ -265,8 +265,8 @@ int main()
     // ============================
     
     // Initialize the new objects
-    oneInt *a = newObject("oneint", oneElementArray);
-    twoInt *b = newObject("twoint", twoElementsArray);
+    oneInt *a = (*oneint)newObject("oneint", oneElementArray);
+    twoInt *b = (*twoInt)newObject("twoint", twoElementsArray);
 
     // Print objects data to console.
     object_bling("oneint", a);
