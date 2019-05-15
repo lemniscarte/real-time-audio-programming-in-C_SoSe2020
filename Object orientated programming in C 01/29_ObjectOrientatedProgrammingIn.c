@@ -72,20 +72,20 @@ int main()
     
     // Call a function that accesses the struct elements
     aStruct_aMemberFunctionThatPrints(&myStruct02);
-
+    
     return 0;
 }
 
 /*
-    Output:
-    myStruct01:
-    Member one: 1
-    Member two: 2
+ Output:
+ myStruct01:
+ Member one: 1
+ Member two: 2
  
-    myStruct02:
-    Member one: 3
-    Member two: 4
-*/
+ myStruct02:
+ Member one: 3
+ Member two: 4
+ */
 
 
 

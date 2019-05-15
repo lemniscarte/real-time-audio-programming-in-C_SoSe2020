@@ -64,7 +64,7 @@
 
 
 /** @typedef @c void pointer to a @c void function. */
-typedef void* (*method)(void);
+typedef void* (*new)(void);
 
 /** @typedef @c void pointer to a function, that takes one @c int parameter. */
 typedef void* (*methodInt)(int);
@@ -76,8 +76,8 @@ typedef void* (*methodIntInt)(int, int);
 typedef struct _registeredIntObject
 {
     char name[MAXOBJECTNAMESIZE];   /**< @c char array for the object name */
-    method newMethod;               /**< initializer */
-    int argc;                       /**< arguments list */
+    new newMethod;                  /**< Object Constructor */
+    int argc;                       /**< Arguments count */
 } t_registeredIntObject;
 
 /** @typedef struct with one @c int element only. */
@@ -86,10 +86,9 @@ typedef struct _oneInt {
 } t_oneInt;
 
 
-
 /**
  *  @brief Constructor function that takes a @c int value and returns a pointer\n
- *  to a new @c oneInt struct.
+ *  to a new @c t_oneInt struct.
  *  @param v1 @c int value of the new struct element.
  *  @return x Pointer to the new struct.
  */
@@ -99,7 +98,6 @@ void *oneInt_new(int v1) {
     
     return x;
 }
-
 
 
 /** @typedef struct with two @c int elements. */
@@ -129,7 +127,7 @@ void *twoInt_new(int v1, int v2) {
 t_registeredIntObject objectLookupTable[MAXNUMBEROFOBJECTS];
 
 
-/** @brief Count objects so as not to exceed the lookup table. */
+/** @var Just count the number of objects added to the lookup table later */
 int currentIndex = 0;
 
 
@@ -139,10 +137,10 @@ int currentIndex = 0;
  *  @param m @c new method to initialize the object.
  *  @param argc Arguments list passed at function call.
  */
-void registerObject(char *name, method m, int argc)
+void registerObject(char *name, new m, int argc)
 {
     strcpy(objectLookupTable[currentIndex].name, name);
-    objectLookupTable[currentIndex].newMethod = (method)m;
+    objectLookupTable[currentIndex].newMethod = (new)m;
     objectLookupTable[currentIndex].argc = argc;
     currentIndex++;
 }
@@ -158,6 +156,7 @@ void registerObject(char *name, method m, int argc)
  *  @param name Object name.
  *  @param argv Pointer to the @c int arguments array (argument vector).
  *  @return Pointer to the new object.
+ *  @todo Error handling if function returns @c NULL.
  */
 void *newObject(char *name, int *argv)
 {
@@ -209,13 +208,22 @@ int main()
     twoElementsArray[0] = 2;
     twoElementsArray[1] = 4;
     
-    // Register objects in the lookup table.
-    registerObject("oneint", (method)oneInt_new, 1);
-    registerObject("twoint", (method)twoInt_new, 2);
+    // Register object in the lookup table.
+    registerObject("oneint",            // Name of the object
+                   (new)oneInt_new,     // Back casted new method pointer
+                   1);                  // Number of arguments resp. argc
     
-    // Initialize objects with data.
-    t_oneInt *a = newObject("oneint", oneElementArray);
-    t_twoInt *b = newObject("twoint", twoElementsArray);
+    // Register object in the lookup table.
+    registerObject("twoint",            // Name of the object
+                   (new)twoInt_new,     // Back casted new method pointer
+                   2);                  // Number of arguments resp. argc
+    
+    // Initialize the new objects and cast back the pointer
+    t_oneInt *a = (t_oneInt*)newObject("oneint",    // Name of the object
+                            oneElementArray);       // Pointer to the argumuents list resp. argv
+    
+    t_twoInt *b = (t_twoInt*)newObject("twoint",    // Name of the object
+                            twoElementsArray);      // Pointer to the argumuents list resp. argv
     
     // Print objects data to console.
     printf("%d\n", a->val1);
