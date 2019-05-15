@@ -163,10 +163,10 @@ void addBling(char *name, bling b)
     {
         if(!strcmp(name, objectLookupTable[i].name))
             break;
-
+        
         i++;
     }
-
+    
     // Add the method to the object
     objectLookupTable[i].blingMethod = b;
 }
@@ -187,8 +187,8 @@ void object_bling(char *name, void *x)
             break;
         i++;
     }
-
-    // Call the @c blingMethod of the object pointed by @c x 
+    
+    // Call the @c blingMethod of the object pointed by @c x
     (objectLookupTable[i].blingMethod)(x);
 }
 
@@ -210,28 +210,28 @@ void *newObject(char *name, int *argv)
             break;
         i++;
     }
-
+    
     // Routines for each case
     if (objectLookupTable[i].argc == 1)
     {
         // Get the pointer to the matching initializer function.
         void* (*new_ptr)(int) =
         (methodInt)objectLookupTable[i].newMethod;
-
+        
         // Call the initializer via the function pointer.
         return (new_ptr)(argv[0]);
     }
-
+    
     else if (objectLookupTable[i].argc == 2)
     {
         // Get the pointer to the matching initializer function.
         void* (*new_ptr)(int, int) =
         (methodIntInt)objectLookupTable[i].newMethod;
-
+        
         // Call the initializer via the function pointer.
         return (new_ptr)(argv[0], argv[1]);
     }
-
+    
     else return NULL;
 }
 
@@ -247,18 +247,21 @@ int main()
     // Declaration of the Arrays that hold object data.
     int oneElementArray[1];
     int twoElementsArray[2];
-
+    
     // Initialization of the Arrays with object data.
     oneElementArray[0] = 1;
     twoElementsArray[0] = 2;
     twoElementsArray[1] = 4;
-
+    
     // Register objects in the lookup table.
-    registerObject("oneint", (new)oneInt_new, 1);
+    registerObject("oneint",            /**< Name of the object */
+                   (new)oneInt_new,     /**< Casted new method pointer */
+                   1                    /**< Number of arguments resp. arguments count */
+                   );
     addBling("oneint", (bling) oneInt_bling);
     registerObject("twoint", (new)twoInt_new, 2);
     addBling("twoint", (bling) twoInt_bling);
-
+    
     
     
     // Imitation of new in PD style
@@ -267,11 +270,11 @@ int main()
     // Initialize the new objects
     oneInt *a = (oneInt*)newObject("oneint", oneElementArray);
     twoInt *b = (twoInt*)newObject("twoint", twoElementsArray);
-
+    
     // Print objects data to console.
     object_bling("oneint", a);
     object_bling("twoint", b);
-
+    
     return 0;
 }
 
