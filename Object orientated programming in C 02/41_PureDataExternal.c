@@ -85,7 +85,8 @@ void helloworld_setup(void) {
                                  0,                             /**< No special destructor. */
                                  sizeof(t_helloworld),          /**< The size of the data-space. */
                                  CLASS_DEFAULT,                 /**< A normal pd object. */
-                                 0);                            /**< No creation arguments. */
+                                 0,                             /**< No creation arguments. */
+                                 0);                            /**< Placeholder for something.*/
     /*
      *  Attach functions to messages
      *  Here we bind the "helloworld_bang()" function to the class
