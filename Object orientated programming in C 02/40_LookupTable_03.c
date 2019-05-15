@@ -1,7 +1,7 @@
 /*************************************************************/
 /**
  *  @file LookupTable_03.c
- *  @brief Example 2/3 how to use a lookup table in PD style \n
+ *  @brief Example 3/3 how to use a lookup table in PD style \n
  *
  *  @author Thomas Resch, thomas.resch@campus.tu-berlin.de\n
  *          Markus Hädrich, markus.haedrich@tu-berlin.de
@@ -74,11 +74,14 @@ typedef struct registeredIntObject
 registeredIntObject objectLookupTable[MAXNUMBEROFOBJECTS];
 int currentIndex = 0;
 
+
+/** @typedef base class struct type */
 typedef struct object
 {
     char className[MAXOBJECTNAMESIZE];
 } object;
 
+/** @typedef inherited resp. child class with one @c int element */
 typedef struct oneInt
 {
     char className[MAXOBJECTNAMESIZE];
@@ -110,7 +113,7 @@ void oneInt_bling(void *x)
 }
 
 
-/** @typedef struct with two @c int elements. */
+/** @typedef inherited resp. child class with two @c int elements */
 typedef struct twoInt
 {
     char className[MAXOBJECTNAMESIZE];  /**< @c char array holding class name*/
@@ -120,7 +123,7 @@ typedef struct twoInt
 
 
 /**
- *  @brief Constructor function for a @c twoInt object, that takes two @c int\n
+ *  @brief Constructor function for a @c twoInt object, that takes two @c int \n
  *  values and returns a pointer to a new @c oneInt struct object.
  *  @param v1 @c int value of the new struct element.
  *  @param v2 @c int value of the new struct element.
@@ -145,7 +148,7 @@ void twoInt_bling(void *x)
 
 
 /**
- *  @brief Function to register an object in the lookup table
+ *  @brief Function to register an object in the lookup table.
  *  @param name @c char pointer to an array with the object name.
  *  @param m Method to initialize the new object.
  *  @param argc Lookup table index as arguments count.
@@ -195,7 +198,7 @@ void object_bling(void *x)
         i++;
     }
     
-    // Call the @c blingMethod of the object pointed by @c x 
+    // Call the @c blingMethod of the object pointed by @c x
     (objectLookupTable[i].blingMethod)(x);
 }
 
