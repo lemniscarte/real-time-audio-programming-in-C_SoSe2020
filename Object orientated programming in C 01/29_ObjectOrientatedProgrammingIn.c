@@ -33,7 +33,7 @@
 typedef struct AStruct {
     int memberOne;      /**< object variable one. */
     int memberTwo;      /**< object variable one. */
-}aStruct;
+} aStruct;
 
 
 /**

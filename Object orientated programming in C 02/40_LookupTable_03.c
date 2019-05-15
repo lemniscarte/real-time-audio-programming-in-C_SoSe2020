@@ -1,6 +1,6 @@
 /*************************************************************/
 /**
- *  @file LookupTable_02.c
+ *  @file LookupTable_03.c
  *  @brief Example 1/3 how to use a lookup table in PD style \n
  *
  *  @author Thomas Resch, thomas.resch@campus.tu-berlin.de\n
