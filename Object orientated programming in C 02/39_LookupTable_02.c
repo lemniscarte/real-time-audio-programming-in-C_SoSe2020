@@ -61,7 +61,7 @@ typedef struct registeredIntObject
 {
     char name[MAXOBJECTNAMESIZE];
     new newMethod;              /**< Initializer method. */
-    bling blingMethod;          /**< Just a name for a method. */
+    bling blingMethod;          /**< Just a pointer name for a later added method. */
     int argc;                   /**< Index count in the lookup table. */
 } t_registeredIntObject;
 
