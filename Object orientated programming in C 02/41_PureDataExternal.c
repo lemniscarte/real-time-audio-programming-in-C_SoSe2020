@@ -31,7 +31,7 @@ static t_class *helloworld_class;
  */
 typedef struct _helloworld
 {
-    t_object  x_obj;
+    t_object  x_obj;                /**< Base class only */
 } t_helloworld;
 
 /**
