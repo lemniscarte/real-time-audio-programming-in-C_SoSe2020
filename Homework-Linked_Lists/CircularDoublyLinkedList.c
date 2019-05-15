@@ -373,7 +373,7 @@ p_node_t delete_node(p_node_t *head_ref, p_node_t del)
         if (del == *head_ref) *head_ref = del->next;
     }
     
-    // Give back occupied memory of cutted node
+    // Return the used memory of the truncated node.
     free(del);
     
     return *head_ref;
