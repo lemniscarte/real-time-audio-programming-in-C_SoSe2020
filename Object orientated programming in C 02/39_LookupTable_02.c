@@ -241,6 +241,9 @@ void *newObject(char *name, int *argv)
 
 int main()
 {
+    // Imitation of setup in PD style
+    // ==============================
+    
     // Declaration of the Arrays that hold object data.
     int oneElementArray[1];
     int twoElementsArray[2];
@@ -256,6 +259,11 @@ int main()
     registerObject("twoint", (new)twoInt_new, 2);
     addBling("twoint", (bling) twoInt_bling);
 
+    
+    
+    // Imitation of new in PD style
+    // ============================
+    
     // Initialize the new objects
     oneInt *a = newObject("oneint", oneElementArray);
     twoInt *b = newObject("twoint", twoElementsArray);
