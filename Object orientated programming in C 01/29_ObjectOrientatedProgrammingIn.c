@@ -8,6 +8,11 @@
  *  Supervisors: Thomas Resch, Markus Hädrich, (TU-Berlin)\n
  *  "Object oriented programming in C - session 01"
  *
+ *  C has no classes and therefore no class member functions. But structs \n
+ *  are basically classes and have struct members (variables). They can be \n
+ *  accessed with the . (dot/point) or the -> (arrow) operator, depending on \n
+ *  whether a pointer or a value is dereferenced.
+ *
  *  @date 09.05.19. – first implementation
  *
  *  @bug if you found one - report it!
@@ -19,12 +24,6 @@
 
 #include <stdio.h>
 
-/*
- *      C has no classes and therefore no class member functions.
- *      But structs are basically classes and have struct members (variables).
- *      They can be accessed with the . (dot/point) or the -> (arrow) operator,
- *      depending on whether a pointer or a value is dereferenced:
- */
 
 /**
  * @typedef struct that holds two @c int vars.
