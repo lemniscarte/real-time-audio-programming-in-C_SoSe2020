@@ -84,7 +84,7 @@ typedef struct _oneInt
  *  @brief Constructor function that takes a @c int value and returns a pointer\n
  *  to a new @c t_oneInt struct.
  *  @param v1 @c int value of the new struct element.
- *  @return x void pointer to the new @c t_oneInt object.
+ *  @return x @c void pointer to the new @c t_oneInt object.
  */
 void *oneInt_new(int v1)
 {   /**< Allocate memory for object @c x */
@@ -117,7 +117,7 @@ typedef struct _twoInt
  *  values and returns a pointer to a new @c t_oneInt struct object.
  *  @param v1 @c int value of the new struct element.
  *  @param v2 @c int value of the new struct element.
- *  @return x void pointer to the new @c t_oneInt object.
+ *  @return x @c void pointer to the new @c t_oneInt object.
  */
 void *twoInt_new(int v1, int v2)
 {   /**< Allocate memory for object @c x */
@@ -181,7 +181,7 @@ void addBling(char *name, bling b)
 /**
  *  @brief Function that calls the @c blingMethod of a given object.
  *  @param name @c char pointer to an array with the object name.
- *  @param x Pointer to the given object.
+ *  @param x @c void pointer to the given object.
  *  @todo Error handling if object is not found in the lookup table.
  */
 void object_bling(char *name, void *x)
@@ -205,7 +205,7 @@ void object_bling(char *name, void *x)
  *  @brief General initializer function.
  *  @param name @c char pointer to an array with the object name.
  *  @param argv Pointer to the arguments array (argument vector).
- *  @return Pointer to the new object.
+ *  @return @c void pointer to the new object.
  *  @todo Error handling if function returns @c NULL \n
  *  or @c i >= MAXNUMBEROFOBJECTS.
  */
