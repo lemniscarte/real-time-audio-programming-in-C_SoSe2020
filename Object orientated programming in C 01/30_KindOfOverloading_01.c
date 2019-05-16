@@ -17,7 +17,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  **************************************************************/
@@ -56,11 +56,12 @@ float addArray_float(float *myArray, int size) {
 
 
 int main() {
-    
+    // Generating data
     const int arraySize = 2;
     float floatArray[arraySize] = {1.1, 2.2};
     int intArray[arraySize] = {1, 2};
     
+    // Working with the data
     printf("%f\n", addArray_float(floatArray, arraySize));
     printf("%d\n", addArray_int(intArray, arraySize));
     

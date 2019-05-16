@@ -32,22 +32,20 @@
  *          }
  *  @endcode
  *
+ *
+ *  What we haven’t seen so far is passing a function name as an argument to
+ *  another function. In this case the @c helloworld_new() function.
+ *
+ *  The syntax for this dealing with function pointers is shown in the
+ *  following examples.
+ *
+ *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  **************************************************************/
-
-
-
-/*
- *   What we haven’t seen so far is passing a function name as an argument to
- *   another function. In this case the helloworld_new() function
- *
- *   The syntax for this dealing with function pointers is shown in the
- *   following examples.
- */
 
 
 #include <stdio.h>
@@ -56,17 +54,24 @@
  * @brief Function that prints a value.
  * @param a Value to print.
  */
-void fun(int a) {
-    printf("Value of a is %d\n", a);
+void func(int a) {
+    printf("Value of a is %d.\n", a);
 }
+
 
 int main()
 {
-    // void pointer to the function fun.
-    void (*fun_ptr)(int) = &fun;
+    // void pointer to the function func.
+    void (*func_ptr)(int) = &func;
     
-    // Call the function fun via passing a value to the function pointer
-    (*fun_ptr)(10);
+    // Call the function func via passing a value to the function pointer
+    (*func_ptr)(42);
     
     return 0;
 }
+
+
+/*
+    Output:
+    Value of a is 42.
+ */

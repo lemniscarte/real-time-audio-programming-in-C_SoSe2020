@@ -12,7 +12,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  **************************************************************/
@@ -69,9 +69,9 @@ enum simpleAtomTypes {UNDEFINED, INTEGER, FLOAT};
  */
 typedef struct simpleAtom
 {
-    int type;           /**< @c int variable, that defines the atom type. */
-    int intVal;         /**< @c int variable. */
-    float floatVal;     /**< @c float variable. */
+    int type;           /**< Holding class type from @c simpleAtomTypes */
+    int intVal;         /**< @c simpleAtom data: @c int variable. */
+    float floatVal;     /**< @c simpleAtom data: @c float variable. */
 } simpleAtom;
 
 
@@ -82,8 +82,8 @@ typedef struct simpleAtom
  */
 void simpleAtom_setFloat(simpleAtom *a, float fVal)
 {
-    a->type = FLOAT;
-    a->floatVal = fVal;
+    a->type = FLOAT;        /**< Set type */
+    a->floatVal = fVal;     /**< Set data */
 }
 
 /**
@@ -93,8 +93,8 @@ void simpleAtom_setFloat(simpleAtom *a, float fVal)
  */
 void simpleAtom_setInt(simpleAtom *a, int iVal)
 {
-    a->type = INTEGER;
-    a->intVal = iVal;
+    a->type = INTEGER;      /**< Set type */
+    a->intVal = iVal;       /**< Set data */
 }
 
 

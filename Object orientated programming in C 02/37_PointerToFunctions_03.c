@@ -12,7 +12,7 @@
  *
  * @date 09.05.19. – first implementation
  *
- * @bug if you found one - report it!
+ * @bug You found one? Please report it!
  *
  * @version 0.42
  **************************************************************/
@@ -47,18 +47,19 @@ typedef struct _oneInt
  *  @return Pointer to the new struct.
  */
 void *oneInt_new(int v1)
-{
+{   /**< Allocate memory for object @c x */
     t_oneInt *x = (t_oneInt *)malloc(sizeof(t_oneInt));
-    x->val1 = v1;
-    return x;
+    x->val1 = v1;                   /**< Set value */
+
+    return (void *)x;               /**< Cast @c x to @c void pointer */
 }
 
 
 /** @typedef struct with two @c int elements. */
 typedef struct _twoInt
 {
-    int val1;   /**< Struct @c int variable. */
-    int val2;   /**< Struct @c int variable. */
+    int val1;                       /**< Struct @c int variable. */
+    int val2;                       /**< Struct @c int variable. */
 } t_twoInt;
 
 
@@ -70,11 +71,13 @@ typedef struct _twoInt
  *  @return Pointer to the new struct.
  */
 void *twoInt_new(int v1, int v2)
-{
+{   /**< Allocate memory for object @c x */
     t_twoInt *x = (t_twoInt *)malloc(sizeof(t_twoInt));
-    x->val1 = v1;
-    x->val2 = v2;
-    return x;
+    
+    x->val1 = v1;                   /**< Set value */
+    x->val2 = v2;                   /**< Set value */
+    
+    return (void *)x;               /**< Cast @c x to @c void pointer */
 }
 
 
@@ -82,22 +85,23 @@ void *twoInt_new(int v1, int v2)
  *  @brief Constructor function that takes a pointer to a constructor function\n
  *  and an argument list/count
  *  @param m The objects method pointer.
- *  @param args Arguments list used at function call.
+ *  @param argv Arguments list used at function call.
  *  @param argc Arguments count of argument list used at function call.
  *  @return Pointer to the new struct object depending on arguments count @c argc.
+ *  @todo Error handling if x = NULL
  */
-void *intObject_new(new m, int *args, int argc)
+void *intObject_new(new m, int *argv, int argc)
 {
     if(argc == 1)
     {
         void* (*new_ptr)(int) = (methodInt)m;
-        return (new_ptr)(args[0]);
+        return (new_ptr)(argv[0]);
     }
     
     else if(argc == 2)
     {
         void* (*new_ptr)(int, int) = (methodIntInt)m;
-        return (new_ptr)(args[0], args[1]);
+        return (new_ptr)(argv[0], argv[1]);
     }
     
     else return NULL;
@@ -125,7 +129,7 @@ int main()
     
     // Print results.
     printf("%d\n", a->val1);
-    printf("%d %d\n", b->val1, b->val2);
+    printf("%d, %d\n", b->val1, b->val2);
     
     return 0;
 }

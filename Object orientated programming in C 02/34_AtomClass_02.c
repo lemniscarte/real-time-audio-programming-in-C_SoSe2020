@@ -19,7 +19,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  **************************************************************/
@@ -29,28 +29,33 @@
 #include <stdlib.h>
 
 
+/**
+ * @brief Enum that is used in an atom struct type.
+ * @enum Holds the defined data types of an atom struct type.
+ */
+enum simpleAtomTypes {UNDEFINED, INTEGER, FLOAT};
 
 /**
  * @brief A simple class example.
  * @typedef @c struct type as workaround for the missing class feature in C
  */
-typedef struct myClass
-{
-    int type;
-    float floatVal;
-    
+typedef struct myClass {
+    int type;               /**< Holding class type from @c simpleAtomTypes */
+    float floatVal;         /**< Class data */
 } myClass;
 
 
 /**
  * @brief Constructor function for myClass.
- * @return Pointer to the initialised myClass object.
+ * @return Pointer to the initialized myClass object.
  */
 myClass *myClass_new()
-{
+{   /**< Allocate memory for object @c x */
     myClass *x = (myClass *)malloc(sizeof(myClass));
-    x->type = 0;
-    x->floatVal = 0;
+    
+    x->type = FLOAT;        /**< Set class type */
+    x->floatVal = 0.0;      /**< Set value */
+    
     return x;
 }
 

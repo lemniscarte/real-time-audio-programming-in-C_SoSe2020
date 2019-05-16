@@ -18,7 +18,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  ************************************************************/
@@ -29,11 +29,12 @@
 
 
 /**
- * @brief Function that adds all elements of an @c int array.
- * @param type String that defines the array type.
- * @param myArray Pointer to an @c int array.
- * @param size Length of the array.
- * @param result Pointer to the variable, where to write the result.
+ *  @brief Function that adds all elements of an @c int array in respect of
+ *  the type parameter.
+ *  @param type String that defines the array type.
+ *  @param myArray Pointer to an @c int array.
+ *  @param size Length of the array.
+ *  @param result @c void pointer to the variable, where to write the result.
  */
 void addArray(char *type, void *myArray, unsigned int size, void *result)
 {

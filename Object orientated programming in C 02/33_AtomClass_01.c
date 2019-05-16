@@ -10,7 +10,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  **************************************************************/
@@ -55,7 +55,7 @@ enum simpleAtomTypes {UNDEFINED, INTEGER, FLOAT};
  */
 typedef struct baseClass
 {
-    int type;       /**< @c int variable, that defines the atom type. */
+    int type;       /**< Holding class type from @c simpleAtomTypes */
     
 } baseClass;
 
@@ -64,24 +64,24 @@ typedef struct baseClass
  * @brief Derived class.
  * @typedef A derived class atom object type that owns the base class member.
  */
-typedef struct derivedClassFloat
+typedef struct _derivedClassFloat
 {
-    int type;       /**< @c int variable, that defines the atom type. */
-    float floatVal; /**< @c float variable of the atom type. */
+    int type;       /**< Holding class type from @c simpleAtomTypes */
+    float floatVal; /**< Class data */
     
-} derivedClassFloat;
+} t_derivedClassFloat;
 
 
 /**
  * @brief Derived class.
  * @typedef A derived class atom object type that owns the base class member.
  */
-typedef struct derivedClassInt
+typedef struct _derivedClassInt
 {
-    int type;       /**< @c int variable, that defines the atom type. */
-    int intVal;     /**< @c int variable of the atom type. */
+    int type;       /**< Holding class type from @c simpleAtomTypes */
+    int intVal;     /**< Class data */
     
-} derivedClassInt;
+} t_derivedClassInt;
 
 
 /**
@@ -96,7 +96,7 @@ int baseClass_getType(baseClass *x)
 
 int main() {
     // Declare a derived class object
-    derivedClassFloat someThing;
+    t_derivedClassFloat someThing;
     
     // Set type and var member
     someThing.type = FLOAT;

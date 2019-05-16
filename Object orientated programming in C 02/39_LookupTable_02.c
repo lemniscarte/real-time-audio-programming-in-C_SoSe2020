@@ -25,7 +25,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  **************************************************************/
@@ -36,7 +36,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/** @const Number + 1 chars that can be used to name the object type */
+/** @const n-1 chars that can be used to name the object type */
 #define MAXOBJECTNAMESIZE 24
 
 /** @const Number of objects that can be created */
@@ -59,10 +59,10 @@ typedef void (*bling)(void *);
 /** @typedef struct holding an @c bling object. */
 typedef struct _registeredIntObject
 {
-    char name[MAXOBJECTNAMESIZE];
-    new newMethod;              /**< Initializer method. */
-    bling blingMethod;          /**< Just a pointer name for a later added method. */
-    int argc;                   /**< Index count in the lookup table. */
+    char name[MAXOBJECTNAMESIZE]; /**< @c char array for the object name. */
+    new newMethod;                /**< Pointer to the constructor method. */
+    bling blingMethod;            /**< Pointer to the later added @c bling method. */
+    int argc;                     /**< Arguments count. */
 } t_registeredIntObject;
 
 
@@ -76,7 +76,7 @@ int currentIndex = 0;
 /** @typedef struct with one @c int element only. */
 typedef struct _oneInt
 {
-    int val1;
+    int val1;                   /**< Struct @c t_oneInt variable. */
 } t_oneInt;
 
 
@@ -84,13 +84,14 @@ typedef struct _oneInt
  *  @brief Constructor function that takes a @c int value and returns a pointer\n
  *  to a new @c t_oneInt struct.
  *  @param v1 @c int value of the new struct element.
- *  @return x Pointer to the new @c t_oneInt object.
+ *  @return x void pointer to the new @c t_oneInt object.
  */
 void *oneInt_new(int v1)
-{
+{   /**< Allocate memory for object @c x */
     t_oneInt *x = (t_oneInt *)malloc(sizeof(t_oneInt));
-    x->val1 = v1;
-    return x;
+    x->val1 = v1;                       /**< Set value */
+    
+    return (void *)x;                   /**< Cast @c x to @c void pointer */
 }
 
 /**
@@ -106,8 +107,8 @@ void oneInt_bling(void *x)
 /** @typedef struct with two @c int elements. */
 typedef struct _twoInt
 {
-    int val1;
-    int val2;
+    int val1;                       /**< Struct @c t_twoInt variable. */
+    int val2;                       /**< Struct @c t_twoInt variable. */
 } t_twoInt;
 
 
@@ -116,14 +117,16 @@ typedef struct _twoInt
  *  values and returns a pointer to a new @c t_oneInt struct object.
  *  @param v1 @c int value of the new struct element.
  *  @param v2 @c int value of the new struct element.
- *  @return x Pointer to the new @c t_oneInt object.
+ *  @return x void pointer to the new @c t_oneInt object.
  */
 void *twoInt_new(int v1, int v2)
-{
+{   /**< Allocate memory for object @c x */
     t_twoInt *x = (t_twoInt *)malloc(sizeof(t_twoInt));
-    x->val1 = v1;
-    x->val2 = v2;
-    return x;
+    
+    x->val1 = v1;           /**< Set value */
+    x->val2 = v2;           /**< Set value */
+    
+    return (void *)x;       /**< Cast @c x to @c void pointer */
 }
 
 
@@ -156,6 +159,7 @@ void registerObject(char *name, new m, int argc)
  *  @brief Function to add a method of an object to the lookup table.
  *  @param name @c char pointer to an array with the object name.
  *  @param b Method of the object.
+ *  @todo Error handling if object is not found in the lookup table.
  */
 void addBling(char *name, bling b)
 {
@@ -178,6 +182,7 @@ void addBling(char *name, bling b)
  *  @brief Function that calls the @c blingMethod of a given object.
  *  @param name @c char pointer to an array with the object name.
  *  @param x Pointer to the given object.
+ *  @todo Error handling if object is not found in the lookup table.
  */
 void object_bling(char *name, void *x)
 {
@@ -201,7 +206,8 @@ void object_bling(char *name, void *x)
  *  @param name @c char pointer to an array with the object name.
  *  @param argv Pointer to the arguments array (argument vector).
  *  @return Pointer to the new object.
- *  @todo Error handling if function returns @c NULL.
+ *  @todo Error handling if function returns @c NULL \n
+ *  or @c i >= MAXNUMBEROFOBJECTS.
  */
 void *newObject(char *name, int *argv)
 {
@@ -281,10 +287,10 @@ int main()
     
     // Initialize the new objects and cast back the pointer
     t_oneInt *a = (t_oneInt*)newObject("oneint",            // Name of the object
-                                       oneElementArray);    // Pointer to the argumuents list resp. argv
+                                       oneElementArray);    // Pointer to the arguments list resp. argv
     
     t_twoInt *b = (t_twoInt*)newObject("twoint",            // Name of the object
-                                       twoElementsArray);   // Pointer to the argumuents list resp. argv
+                                       twoElementsArray);   // Pointer to the arguments list resp. argv
     
     // Call the bling method to print the objects data to console.
     object_bling("oneint", a);
@@ -292,11 +298,6 @@ int main()
     
     return 0;
 }
-
-
-
-
-
 
 
 

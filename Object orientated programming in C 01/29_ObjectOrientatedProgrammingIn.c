@@ -15,8 +15,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
- *
+ *  @bug You found one? Please report it!
  *  @version 0.42
  **************************************************************/
 

@@ -18,7 +18,7 @@
  *
  * @date 09.05.19. – first implementation
  *
- * @bug if you found one - report it!
+ * @bug You found one? Please report it!
  *
  * @version 0.42
  **************************************************************/
@@ -64,7 +64,7 @@ int mathOp(int (*OpType)(int, int), int a, int b) {
 
 int main()
 {
-    printf("%i,%i\n", mathOp(sum, 10, 12), mathOp(mul, 10, 2));
+    printf("%i,%i\n", mathOp(&sum, 10, 12), mathOp(&mul, 10, 2));
     return 0;
 }
 

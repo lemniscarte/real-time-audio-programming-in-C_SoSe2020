@@ -29,7 +29,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  **************************************************************/
@@ -41,14 +41,14 @@
 #include <string.h>
 
 
-/** @const Number + 1 chars that can be used to name the object type */
+/** @const  n-1 chars that can be used to name the object type */
 #define MAXOBJECTNAMESIZE 24
 
 /** @const Number of objects that can be created */
 #define MAXNUMBEROFOBJECTS 10
 
 /** @typedef @c void pointer to a @c void function. */
-typedef void* (*method)(void);
+typedef void* (*new)(void);
 
 /** @typedef @c void pointer to a function, that takes one @c int parameter. */
 typedef void* (*methodInt)(int);
@@ -57,16 +57,16 @@ typedef void* (*methodInt)(int);
 typedef void* (*methodIntInt)(int, int);
 
 /** @typedef @c void function, that takes a function pointer */
-typedef void (*bling)(void *);
+typedef void (*bling)(void*);
 
 
 /** @typedef struct holding an @c bling object. */
 typedef struct _registeredIntObject
 {
-    char name[MAXOBJECTNAMESIZE];
-    method newMethod;
-    bling blingMethod;
-    int argc;
+    char name[MAXOBJECTNAMESIZE];           /**< @c char array for the object name. */
+    new newMethod;                          /**< Pointer to the constructor method. */
+    bling blingMethod;                      /**< Pointer to the later added @c bling method. */
+    int argc;                               /**< Arguments count. */
 } t_registeredIntObject;
 
 /** @typedef struct holding an @c bling object. */
@@ -79,14 +79,14 @@ int currentIndex = 0;
 /** @typedef base class struct type */
 typedef struct _object
 {
-    char className[MAXOBJECTNAMESIZE];
+    char className[MAXOBJECTNAMESIZE];  /**< @c char array holding class name*/
 } t_object;
 
 /** @typedef inherited resp. child class with one @c int element */
 typedef struct _oneInt
 {
-    char className[MAXOBJECTNAMESIZE];
-    int val1;
+    char className[MAXOBJECTNAMESIZE];  /**< @c char array holding class name*/
+    int val1;                           /**< Class data */
 } t_oneInt;
 
 
@@ -94,13 +94,15 @@ typedef struct _oneInt
  *  @brief Constructor function that takes a @c int value and returns a pointer\n
  *  to a new @c t_oneInt struct.
  *  @param v1 @c int value of the new struct element.
- *  @return x Pointer to the new @c t_oneInt object.
+ *  @return x @c void pointer to the new @c t_oneInt object. This object has \n
+ *  to been casted back before use.
  */
 void *oneInt_new(int v1)
-{
+{   /**< Allocate memory for object @c x */
     t_oneInt *x = (t_oneInt *)malloc(sizeof(t_oneInt));
-    x->val1 = v1;
-    return x;
+    x->val1 = v1;                       /**< Set value */
+    
+    return (void *)x;                   /**< Cast @c x to @c void pointer */
 }
 
 
@@ -110,6 +112,7 @@ void *oneInt_new(int v1)
  */
 void oneInt_bling(void *x)
 {
+    /**< Casting @c x back to original @c t_oneInt before use. */
     printf("%d\n", ((t_oneInt *)x)->val1);
 }
 
@@ -118,8 +121,8 @@ void oneInt_bling(void *x)
 typedef struct _twoInt
 {
     char className[MAXOBJECTNAMESIZE];  /**< @c char array holding class name*/
-    int val1;                           /**< class data */
-    int val2;                           /**< class data */
+    int val1;                           /**< Class data */
+    int val2;                           /**< Class data */
 } t_twoInt;
 
 
@@ -128,14 +131,16 @@ typedef struct _twoInt
  *  values and returns a pointer to a new @c t_oneInt struct object.
  *  @param v1 @c int value of the new struct element.
  *  @param v2 @c int value of the new struct element.
- *  @return x Pointer to the new @c t_oneInt object.
+ *  @return x @c void pointer to the new @c t_oneInt object. This object has \n
+ *  to been casted back before use.
  */
 void *twoInt_new(int v1, int v2)
-{
+{   /**< Allocate memory for object @c x */
     t_twoInt *x = (t_twoInt *)malloc(sizeof(t_twoInt));
-    x->val1 = v1;
-    x->val2 = v2;
-    return x;
+    x->val1 = v1;                       /**< Set value */
+    x->val2 = v2;                       /**< Set value */
+    
+    return (void *)x;                   /**< Cast @c x to @c void pointer */
 }
 
 /**
@@ -154,10 +159,10 @@ void twoInt_bling(void *x)
  *  @param m Method to initialize the new object.
  *  @param argc Lookup table index as arguments count.
  */
-void registerObject(char *name, method m, int argc)
+void registerObject(char *name, new m, int argc)
 {
     strcpy(objectLookupTable[currentIndex].name, name);
-    objectLookupTable[currentIndex].newMethod = (method)m;
+    objectLookupTable[currentIndex].newMethod = (new)m;
     objectLookupTable[currentIndex].argc = argc;
     currentIndex++;
 }
@@ -167,6 +172,7 @@ void registerObject(char *name, method m, int argc)
  *  @brief Function to add a method of an object to the lookup table.
  *  @param name @c char pointer to an array with the object name.
  *  @param b Method of the object.
+ *  @todo Error handling if object is not found in the lookup table.
  */
 void addBling(char *name, bling b)
 {
@@ -187,6 +193,7 @@ void addBling(char *name, bling b)
 /**
  *  @brief Function that calls the @c blingMethod of a given object.
  *  @param x Pointer to the given object.
+ *  @todo Error handling if object is not found in the lookup table.
  */
 void object_bling(void *x)
 {
@@ -209,8 +216,9 @@ void object_bling(void *x)
  *  @brief General initializer function.
  *  @param name @c char pointer to an array with the object name.
  *  @param argv Pointer to the arguments array (argument vector).
- *  @return Pointer to the new object.
- *  @todo Error handling if function returns @c NULL.
+ *  @return x @c void pointer to the new object.
+ *  @todo Error handling if function returns @c NULL \n
+ *  or @code i >= MAXNUMBEROFOBJECTS. @endcode
  */
 void *newObject(char *name, int *argv)
 {
@@ -227,7 +235,7 @@ void *newObject(char *name, int *argv)
     }
     
     // Routines for each case.
-    if(objectLookupTable[i].argc == 1)
+    if (objectLookupTable[i].argc == 1)
     {
         // Get the pointer to the matching initializer function.
         void* (*new_ptr)(int) =
@@ -238,7 +246,7 @@ void *newObject(char *name, int *argv)
         strcpy(((t_object *)x)->className, name);
     }
     
-    if(objectLookupTable[i].argc == 2)
+    if (objectLookupTable[i].argc == 2)
     {
         // Get the pointer to the matching initializer function.
         void* (*new_ptr)(int, int) =
@@ -268,27 +276,29 @@ int main()
     twoElementsArray[1] = 4;
     
     // Register objects in the lookup table.
-    registerObject("oneint",                // Name of the object 
-                   (method)oneInt_new,      // Back casted new method pointer
+    registerObject("oneint",                // Name of the object
+                   (new)oneInt_new,         // Back casted new method pointer
                    1);                      // Number of arguments resp. argc
     
     addBling("oneint",                      // Name of the object
              (bling)oneInt_bling);          // Back casted bling method pointer
     
     registerObject("twoint",
-                   (method)twoInt_new,      // Back casted new method pointer
+                   (new)twoInt_new,         // Back casted new method pointer
                    2);                      // Number of arguments resp. argc
     
     // Add method pointer to the lookup table object
-    addBling("twoint",                      // Name of the object 
+    addBling("twoint",                      // Name of the object
              (bling)twoInt_bling);          // Back casted bling method pointer
     
     // Initialize the new objects
     t_oneInt *a = (t_oneInt*)newObject("oneint",    // Name of the object
-                          oneElementArray);         // Pointer to the argumuents list resp. argv
+                          oneElementArray);         // Pointer to the arguments
+                                                    // list resp. argv
     
     t_twoInt *b = (t_twoInt*)newObject("twoint",    // Name of the object
-                          twoElementsArray);        // Pointer to the argumuents list resp. argv
+                          twoElementsArray);        // Pointer to the arguments
+                                                    // list resp. argv
     
     // Call method that prints the object data to console.
     object_bling(a);

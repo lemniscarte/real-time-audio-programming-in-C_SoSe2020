@@ -43,7 +43,7 @@
  *
  *  @date 09.05.19. – first implementation
  *
- *  @bug if you found one - report it!
+ *  @bug You found one? Please report it!
  *
  *  @version 0.42
  **************************************************************/
@@ -75,7 +75,7 @@ typedef void* (*methodIntInt)(int, int);
 /** @typedef struct holding an @c int object. */
 typedef struct _registeredIntObject
 {
-    char name[MAXOBJECTNAMESIZE];   /**< @c char array for the object name */
+    char name[MAXOBJECTNAMESIZE];   /**< @c char array for the object name. */
     new newMethod;                  /**< Object Constructor */
     int argc;                       /**< Arguments count */
 } t_registeredIntObject;
@@ -93,10 +93,11 @@ typedef struct _oneInt {
  *  @return x Pointer to the new struct.
  */
 void *oneInt_new(int v1) {
+    /**< Allocate memory for object @c x */
     t_oneInt *x = (t_oneInt *)malloc(sizeof(t_oneInt));
-    x->val1 = v1;
+    x->val1 = v1;                   /**< Set value */
     
-    return x;
+    return (void *)x;               /**< Cast @c x to @c void pointer */
 }
 
 
@@ -115,10 +116,12 @@ typedef struct _twoInt {
  *  @return x Pointer to the new struct.
  */
 void *twoInt_new(int v1, int v2) {
+    /**< Allocate memory for object @c x */
     t_twoInt *x = (t_twoInt *)malloc(sizeof(t_twoInt));
-    x->val1 = v1;
-    x->val2 = v2;
-    return x;
+    x->val1 = v1;                   /**< Set value */
+    x->val2 = v2;                   /**< Set value */
+    
+    return (void *)x;               /**< Cast @c x to @c void pointer */
 }
 
 
@@ -156,7 +159,8 @@ void registerObject(char *name, new m, int argc)
  *  @param name Object name.
  *  @param argv Pointer to the @c int arguments array (argument vector).
  *  @return Pointer to the new object.
- *  @todo Error handling if function returns @c NULL.
+ *  @todo Error handling if function returns @c NULL \n
+ *  or @c i >= MAXNUMBEROFOBJECTS.
  */
 void *newObject(char *name, int *argv)
 {
