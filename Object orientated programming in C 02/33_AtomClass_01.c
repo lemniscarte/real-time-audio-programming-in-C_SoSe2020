@@ -61,7 +61,7 @@ typedef struct baseClass
 
 
 /**
- * @brief Derived class.
+ * @brief Derived class from base class.
  * @typedef A derived class atom object type that owns the base class member.
  */
 typedef struct _derivedClassFloat
@@ -73,7 +73,7 @@ typedef struct _derivedClassFloat
 
 
 /**
- * @brief Derived class.
+ * @brief Derived class from base class.
  * @typedef A derived class atom object type that owns the base class member.
  */
 typedef struct _derivedClassInt
@@ -87,7 +87,7 @@ typedef struct _derivedClassInt
 /**
  * @brief Function that gets the atom type.
  * @param x Pointer to an atom type object.
- * @return int member of the @c enum @c simpleAtomTypes.
+ * @return @c int member of the @c enum @c simpleAtomTypes.
  */
 int baseClass_getType(baseClass *x)
 {
