@@ -43,7 +43,7 @@ int addArray_int(int *myArray, int size) {
 /**
  * @brief Function that adds all elements of an @c float array
  * @param myArray Pointer to an @c float array
- * @param size length of the array
+ * @param size Length of the array
  * @return int Sum of the array elements
  */
 float addArray_float(float *myArray, int size) {
