@@ -41,7 +41,7 @@ int sum(int a, int b) {
  * @brief Function that multiplies two @c int values.
  * @param a First factor.
  * @param b Second factor.
- * @return int Product of the both @c int parameter values.
+ * @return @c int product of the both @c int parameter values.
  */
 int mul(int a, int b) {
     return a * b;
@@ -55,7 +55,7 @@ int mul(int a, int b) {
  *        and returns an @c int as result.
  * @param a First @c int paramter to process.
  * @param b Second @c int paramter to process.
- * @return int Result of the math operation.
+ * @return @c int result of the math operation.
  */
 int mathOp(int (*OpType)(int, int), int a, int b) {
     return OpType(a, b);
