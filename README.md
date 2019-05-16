@@ -8,12 +8,12 @@ Because we want to write externals for PD in this course, we are based on the co
 Therefore, there are the following spelling conventions:
 
 ### Functions:
-´´´pseudoClassInLowerCamelCase_methodOfTheClassObject´´´
+```pseudoClassInLowerCamelCase_methodOfTheClassObject```
 
 ### Structs:
 
-´´´typedef struct _structName 
+'''typedef struct _structName 
 {
 ...
-} t_structName´´´
+} t_structName'''
 
