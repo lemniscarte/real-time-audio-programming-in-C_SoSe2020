@@ -1,6 +1,6 @@
 # real-time-audio-programming-in-C
-Teaching material for the programming seminar "Real-Time Audio Programming In C" of the summer semester 2019 
-https://www.ak.tu-berlin.de
+Teaching material for the programming seminar ["Real-Time Audio Programming In C"](https://www.ak.tu-berlin.de/menue/lehre/sommersemester_2019/real_time_audio_programmierung_in_c/) of the summer semester 2019 
+
 
 
 Because we want to write externals for PD in this course, we are based on the coding style of Miller Puckette.
@@ -11,9 +11,9 @@ Functions:
 "pseudoClassInLowerCamelCase_methodOfTheClassObject"
 
 Structs:
-@code
+
 typedef struct _structName 
 {
 ...
 } t_structName
-@endcode
+
