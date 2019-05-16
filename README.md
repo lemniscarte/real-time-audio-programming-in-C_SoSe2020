@@ -13,8 +13,8 @@ Therefore, there are the following spelling conventions:
 ### Structs:
 
 ```
-typedef struct _structName
+typedef struct "_structName"
 {
   type var
-} t_structName
+} "t_structName"
 ```
