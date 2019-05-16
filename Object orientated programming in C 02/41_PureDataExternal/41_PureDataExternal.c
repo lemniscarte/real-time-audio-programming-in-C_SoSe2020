@@ -15,6 +15,7 @@
  *
  *  @see https://github.com/pure-data/externals-howto/blob/master/example1/helloworld.c
  *  this example is taken from the source above under the LICENCE.txt
+ *  in this folder.
  *
  **************************************************************/
 
