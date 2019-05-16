@@ -44,7 +44,7 @@ typedef struct _oneInt
  *  @brief Constructor function that takes a @c int value and returns a pointer\n
  *  to a new @c t_oneInt struct.
  *  @param v1 @c int value of the new struct element
- *  @return Pointer to the new struct.
+ *  @return @c void pointer to the new struct.
  */
 void *oneInt_new(int v1)
 {   /**< Allocate memory for object @c x */
@@ -68,7 +68,7 @@ typedef struct _twoInt
  *  pointer to a new @c t_twoInt struct.
  *  @param v1 @c int value of the new struct element.
  *  @param v2 @c int value of the new struct element.
- *  @return Pointer to the new struct.
+ *  @return @c void pointer to the new struct.
  */
 void *twoInt_new(int v1, int v2)
 {   /**< Allocate memory for object @c x */
@@ -87,7 +87,7 @@ void *twoInt_new(int v1, int v2)
  *  @param m The objects method pointer.
  *  @param argv Arguments list used at function call.
  *  @param argc Arguments count of argument list used at function call.
- *  @return Pointer to the new struct object depending on arguments count @c argc.
+ *  @return @c void pointer to the new struct object depending on arguments count @c argc.
  *  @todo Error handling if x = NULL
  */
 void *intObject_new(new m, int *argv, int argc)
