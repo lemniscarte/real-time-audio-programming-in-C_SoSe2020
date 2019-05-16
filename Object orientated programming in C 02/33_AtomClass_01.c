@@ -102,7 +102,7 @@ int main() {
     someThing.type = FLOAT;
     someThing.floatVal = 5.5;
     
-    // Get type of the derived class object using base class casting
+    // Get the type of the derived class object using base class casting
     int type = baseClass_getType((baseClass *) &someThing);
     
     // Print the type

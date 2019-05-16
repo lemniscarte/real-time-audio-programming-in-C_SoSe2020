@@ -32,7 +32,7 @@
 
 /**
  * @brief A simple class example.
- * @typedef .
+ * @typedef @c struct type as workaround for the missing class feature in C
  */
 typedef struct myClass
 {
