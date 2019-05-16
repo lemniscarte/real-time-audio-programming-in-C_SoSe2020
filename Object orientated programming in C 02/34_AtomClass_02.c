@@ -90,3 +90,7 @@ int main() {
 }
 
 
+/*
+ Output:
+ 2
+ */
