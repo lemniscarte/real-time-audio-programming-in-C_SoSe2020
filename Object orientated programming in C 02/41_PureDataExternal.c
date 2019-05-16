@@ -56,6 +56,7 @@ void helloworld_bang(t_helloworld *x)
  *  @discussion This method is called whenever a new object of this class is
  *  created. The name of this function is arbitrary and is registered to Pd
  *  in the @c helloworld_setup() routine.
+ *  @return @c void pointer to the new @c helloworld object.
  */
 void *helloworld_new(void)
 {
