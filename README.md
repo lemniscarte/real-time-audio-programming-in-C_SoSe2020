@@ -15,6 +15,6 @@ Therefore, there are the following spelling conventions:
 ```C
 typedef struct _structName
 {
-  type var
+  ...
 } t_structName
 ```
