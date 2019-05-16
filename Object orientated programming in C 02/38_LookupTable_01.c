@@ -113,7 +113,7 @@ typedef struct _twoInt {
  *  pointer to a new @c t_twoInt struct.
  *  @param v1 first @c int value of the new struct element.
  *  @param v2 second @c int value of the new struct element.
- *  @return x Pointer to the new struct.
+ *  @return x @c void pointer to the new struct.
  */
 void *twoInt_new(int v1, int v2) {
     /**< Allocate memory for object @c x */
@@ -158,7 +158,7 @@ void registerObject(char *name, new m, int argc)
  *  NULL.
  *  @param name Object name.
  *  @param argv Pointer to the @c int arguments array (argument vector).
- *  @return Pointer to the new object.
+ *  @return @c void pointer to the new object.
  *  @todo Error handling if function returns @c NULL \n
  *  or @c i >= MAXNUMBEROFOBJECTS.
  */
