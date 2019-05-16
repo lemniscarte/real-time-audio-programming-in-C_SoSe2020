@@ -11,7 +11,9 @@ Functions:
 "pseudoClassInLowerCamelCase_methodOfTheClassObject"
 
 Structs:
+@code
 typedef struct _structName 
 {
 ...
 } t_structName
+@endcode
