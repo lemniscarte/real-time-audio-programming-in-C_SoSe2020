@@ -14,6 +14,6 @@ Therefore, there are the following spelling conventions:
 
 ```typedef struct _structName 
 {
-...
-} t_structName
+  type var
+} t_structName```
 
