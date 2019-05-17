@@ -18,3 +18,7 @@ typedef struct _structName
   ...
 } t_structName
 ```
+
+
+#### Legal stuff:
+This repository contains several licenses. Third-party code samples that deviate from the root directory of our GPL license are in the same folder as these files. This is quite simple: it applies the license, which can be found in the lowest Ordnerhierachie.
