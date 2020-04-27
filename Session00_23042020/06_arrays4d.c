@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(void) {
     
-    int my_array[3][4][2][5] =
+    int myArray[3][4][2][5] =
     {
         {
             {
@@ -57,10 +57,11 @@ int main() {
         for (j = 0; j < 4; j++) {
             for (k = 0; k < 2; k++) {
                 for (l = 0; l < 5; l++) {
-                    printf("my_array[%d][%d][%d][%d] = %d\n", i, j, k, l, my_array[i][j][k][l]);
+                    printf("myArray[%d][%d][%d][%d] = %d\n", i, j, k, l, myArray[i][j][k][l]);
                 }
             }
         }
     }
+	
     return 0;
 }

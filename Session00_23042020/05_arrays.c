@@ -23,9 +23,10 @@ int main() {
     int int_array[10] = {0,1,2,3,4,5,6,7,8,9}; // Initialisation
     
     // starting point, condition
-    int i, arr_len = sizeof(int_array)/sizeof(int);
+    int i;
+	int len = sizeof(int_array)/sizeof(int);
     
-    for(i = 0; i < arr_len; i++) {
+    for(i = 0; i < len; i++) {
         printf("%d,", int_array[i]);
     }
     

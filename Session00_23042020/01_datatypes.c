@@ -2,19 +2,21 @@
 #include <stdbool.h>
 #include <limits.h>
 
+// Every c program has exact one main() funcuz
 int main()
 {
-    short short_type = 255;      // declaration of shortType
-    int integer_type;            // declaration of integerType
-    integer_type = 1000000;      // initialization of integerType
+    short short_type = 255;      					// declaration and initialization of short type (both in one step)
+    int integer_type;           					// declaration of integer type
+    integer_type = 1000000;      					// initialization of integer type
     
-    float float_type = 0.000001;
-    double double_type = 0.000000000000002;
-    long double long_double_type = 0.3;
+    float float_type = 0.000001;					// declaration and initialization of float type
+    double double_type = 0.000000000000002;			// declaration and initialization of double type
+    long double long_double_type = 0.3;				// declaration and initialization of long double type
     
-    char char_type = 'c';
+    char char_type = 'c';							// declaration and initialization of char type
     
-    bool bool_type = true;        // C99, without #include <stdbool.h>
+    bool bool_type = true;        					// declaration and initialization of bool type
+													// C99, without #include <stdbool.h>
     
     // Sizeof operator is used to evaluate the size of a variable
     printf("Size of short: %lu bytes\n",sizeof(short_type));

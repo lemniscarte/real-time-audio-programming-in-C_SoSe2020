@@ -2,11 +2,18 @@
 
 int main(void) {
 
-    int length = 5;
-    int anArray[length];
-    int i = 0;
+    int length = 5;			// Length of array
+    int anArray[length];	// Initialization
+    int i = 0;				// Index of array
+	
+	/*
+	condition is true {
+		do something
+	}
+	*/
+		
 
-    while(i < length)
+    while(i < length)					
     {
         anArray[i] = i;
         printf("%d %d\n", i, anArray[i]);

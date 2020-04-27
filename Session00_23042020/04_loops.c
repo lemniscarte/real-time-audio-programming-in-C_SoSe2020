@@ -1,11 +1,3 @@
-//
-////  04Loops.c
-////  Einführung in C
-////
-////  Created by mr.markuese on 09.04.19.
-////  Copyright © 2019 mr.markuese. All rights reserved.
-////
-//
 #include <stdio.h>
 #include <math.h>
 
