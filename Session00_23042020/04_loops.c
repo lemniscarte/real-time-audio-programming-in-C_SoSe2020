@@ -35,7 +35,10 @@ int main() {
     return 0;
 }
 
-// Aufgabe: Schreibe ein while-loop analog zur do-while Schleife, dass
-// bei length-1 anfängt und bis 0 zählt. Am array-index i soll der Wert
-// i*i gespeichert werden. Löse diese mit der pow-funktion. Damit diese
-// benutzt werden kann, muss math.h mittels #include hinzugefügt werden.
+/*
+Home work:
+Write a while-loop analogous to the do-while loop that
+starts at length-1 and iterates to 0. At index i save the value 'i*i'.
+Tip: Use the function pow(), including math.h header with #include after #include <stdio.h>.
+*/
+

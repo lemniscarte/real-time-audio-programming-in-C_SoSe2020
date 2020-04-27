@@ -10,5 +10,8 @@ int main(void) {
     return 0;
 }
 
-// Aufgabe: Füge ein zweites Array für 10 Floats hinzu und speichere jeweils den
-// Wert: 1/array_index.
+/*
+Home work:
+Add a second array for 10 floats and save the inverse of the index at index i.
+*/
+

@@ -30,5 +30,8 @@ int main(void) {
     return 0;
 }
 
-// Aufgabe: Schreibe eine while- und eine for-Schleife, die in das
-// Array am index i den Wert length - i speichert und ausgibt.
+/*
+Home work:
+Write a 'while' and a 'for loop' that stores and outputs the value 'length - i' at the index i of the array.
+*/
+
