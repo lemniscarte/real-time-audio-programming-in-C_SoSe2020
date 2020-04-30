@@ -1,7 +1,6 @@
 // 15_mixed_structs.c
 
 #include <stdio.h>
-#include <string.h>
 
 // Enumeration
 enum States {
@@ -46,7 +45,7 @@ typedef struct Biquad {
   
 } biquad_t;     // Define a Biquad type appending "_t"
 
-
+// Declaration of function (this could move to a file.h header file later)
 void printState(enum States *state);
 
 int main() {
@@ -61,7 +60,8 @@ int main() {
   return 0;
 }
 
-// switch/case statement
+
+// Implementation of function (this could move to a file.c later)
 void printState(enum States *state) {
   //*state is just a number
   //printf("%d\n",*state);
