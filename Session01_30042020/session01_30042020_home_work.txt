@@ -2,9 +2,8 @@ To be done at 07/05/2020 04:00 pm
 
 Pure Date:
 
-Create a PD-Patch and build a simple amplitude modulation. 
-What is the difference between tilde- and non-tilde-objects?
-Tell us two of them!
+1. Create a PD-Patch and build a simple amplitude modulation. 
+2. What is the difference between tilde- and non-tilde-objects? Tell us two of them!
 
 C-coding:
 07: What is '985824 % 23471'?
