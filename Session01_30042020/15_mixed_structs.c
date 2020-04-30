@@ -77,8 +77,8 @@ void printState(biquad_t *filter) {
     case edit_mode:
     printf("edit_mode");
     break;
-
-	  default:
+	  
+    default:
     printf("undefined state");
     break;
   }
