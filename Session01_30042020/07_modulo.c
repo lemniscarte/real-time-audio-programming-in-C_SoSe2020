@@ -17,3 +17,8 @@ int main()
 
     return 0;
 }
+
+/*
+Home work:
+What is '985824 % 23471'?
+*/

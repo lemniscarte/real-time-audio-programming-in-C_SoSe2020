@@ -6,7 +6,6 @@
 void print_array(int *arr, int length) {
   for (int i=0; i<length; i++) {
     printf("\narray[%d] = %d", i, arr[i]);
-	printf("\n*ptr = %d",*arr++);
   }
 }
 

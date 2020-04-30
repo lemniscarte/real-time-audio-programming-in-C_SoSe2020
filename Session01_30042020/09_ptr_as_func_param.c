@@ -52,3 +52,9 @@ int main() {
 
 	return 0;
 }
+
+
+/*
+Home work:
+Write a function that takes two pointers to a long number as parameter and returns a long result after a modulo operation.
+*/

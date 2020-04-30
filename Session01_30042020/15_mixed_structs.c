@@ -88,5 +88,5 @@ void printState(biquad_t *filter) {
 
 /*
 Home work:
-Expand the 'void printParameters(biquad_t *filter)' from 08_typedefs.c in such a way that it also outputs the filter state and the filter type.
+Expand the 'void printParameters(biquad_t *filter)' from 08_typedefs.c in such a way that it also outputs the filter state and the filter type!
 */
