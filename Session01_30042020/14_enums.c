@@ -31,5 +31,5 @@ int main() {
 /*
 Homework:
 Write a function 'printFilterType(enum Filters *filter)' that prints the filter type instead of the enum number!
-Tip: Use the 'switch' statement.
+Tip: Use the 'switch' statement!
 */

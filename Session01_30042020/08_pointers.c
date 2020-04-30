@@ -29,5 +29,5 @@ int main()
 
 /*
 Home work:
-Read about "Call by value" and "Call by reference" in your favorite C programming book and explain the difference!
+Read about "call by value" and "call by reference" in your favorite C programming book and explain the difference!
 */
