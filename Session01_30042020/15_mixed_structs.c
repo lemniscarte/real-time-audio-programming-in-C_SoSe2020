@@ -64,7 +64,7 @@ int main() {
 // Implementation of function (this could move to a file.c later)
 void printState(biquad_t *filter) {
   //*state is just a number
-  //printf("%d\n",*state);
+  //printf("%d\n",filter->state);
   switch(filter->state) {
     case active_mode:
     printf("active_mode");
