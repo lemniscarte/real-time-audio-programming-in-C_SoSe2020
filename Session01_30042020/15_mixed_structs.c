@@ -1,8 +1,21 @@
 // 15_mixed_structs.c
 
 #include <stdio.h>
+#include <string.h>
 
 // Enumeration
+enum States {
+    active_mode = 0,
+    standby_mode,
+    edit_mode,
+} state;
+
+// typedef enum States {
+//     active_mode = 0,
+//     standby_mode,
+//     edit_mode,
+// } state_t;
+
 typedef enum Filters {
   bq_type_lowpass = 0,
   bq_type_highpass,
@@ -24,17 +37,17 @@ typedef struct Biquad {
   float a2;   // Filter parameter
   float b1;   // Filter parameter
   float b2;   // Filter parameter
-  
-  enum States {
-    active_mode = 0,
-    stand_by_mode,
-    edit_mode,
-	} state;
 
-  filter_t type;
+  // Both declarations are possible
   //enum Filters type;
+  filter_t type;
+  enum States state;
+  //state_t state;
+  
 } biquad_t;     // Define a Biquad type appending "_t"
 
+
+void printState(enum States *state);
 
 int main() {
   biquad_t currentFilter;
@@ -42,12 +55,38 @@ int main() {
   currentFilter.type = bq_type_lowshelf;
   printf("currentFilter.type: %d\n", currentFilter.type);
   printf("currentFilter.state: %d\n", currentFilter.state);
+  
+  printState(&currentFilter.state);
 
   return 0;
 }
 
+// switch/case statement
+void printState(enum States *state) {
+  //*state is just a number
+  //printf("%d\n",*state);
+  switch(*state) {
+    case active_mode:
+    printf("active_mode");
+    break;
+
+    case standby_mode:
+    printf("standby_mode");
+    break;
+
+    case edit_mode:
+    printf("edit_mode");
+    break;
+
+	  default:
+    printf("undefined state");
+    break;
+  }
+}
+
+
+
 /*
 Home work:
-Expand the 'void printParameters(biquad_t *filter)' from 08_typedefs.c in such a way 
-that it also outputs the filter state and the filter type.
+Expand the 'void printParameters(biquad_t *filter)' from 08_typedefs.c in such a way that it also outputs the filter state and the filter type.
 */
