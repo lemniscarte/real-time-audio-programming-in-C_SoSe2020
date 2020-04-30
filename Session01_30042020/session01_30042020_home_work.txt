@@ -9,7 +9,7 @@ Tell us two of them!
 C-coding:
 07: What is '985824 % 23471'?
 
-08: Read about "Call by value" and "Call by reference" in your favorite C programming book and explain the difference!
+08: Read about "call by value" and "call by reference" in your favorite C programming book and explain the difference!
 
 09: Write a function that takes two pointers to a long number as parameter and returns a long result after a modulo operation!
 
