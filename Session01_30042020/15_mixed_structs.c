@@ -46,7 +46,7 @@ typedef struct Biquad {
 } biquad_t;     // Define a Biquad type appending "_t"
 
 // Declaration of function (this could move to a file.h header file later)
-void printState(enum States *state);
+void printState(biquad_t *filter);
 
 int main() {
   biquad_t currentFilter;
@@ -55,17 +55,17 @@ int main() {
   printf("currentFilter.type: %d\n", currentFilter.type);
   printf("currentFilter.state: %d\n", currentFilter.state);
   
-  printState(&currentFilter.state);
+  printState(&currentFilter);
 
   return 0;
 }
 
 
 // Implementation of function (this could move to a file.c later)
-void printState(enum States *state) {
+void printState(biquad_t *filter) {
   //*state is just a number
   //printf("%d\n",*state);
-  switch(*state) {
+  switch(filter->state) {
     case active_mode:
     printf("active_mode");
     break;
