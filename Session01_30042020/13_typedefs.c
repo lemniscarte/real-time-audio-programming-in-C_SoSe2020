@@ -47,5 +47,5 @@ int main() {
 /*
 Home work:
 1. Write a function 'void resetFilter(biquad_t *filter)' that sets all struct members to zero!
-2. Call this function at the end of main(), put &high_shelf as parameter into it and print the filter coeffcients!
+2. Call this function at the end of the main(), put &high_shelf as parameter into it and print the filter coeffcients!
 */
