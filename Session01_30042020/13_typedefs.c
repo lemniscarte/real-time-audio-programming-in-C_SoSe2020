@@ -21,7 +21,6 @@ void printParameters(biquad_t *filter) {
     printf("\n\nfilter parameters:\nfs = %.2f\nfc = %.2f\nq = %.2f\ngain = %.2f\na0 = %f\na1 = %f\na2 = %f\nb1 = %f\nb2 = %f", filter->fs, filter->fc, filter->q, filter->gain, filter->a0, filter->a1, filter->a2, filter->b1, filter->b2);
 }
 
-
 int main() {
     // Instead of using "struct Biquad low_pass" we can use now "biquad_t" 
     biquad_t low_pass;      // Declaration
@@ -48,4 +47,16 @@ int main() {
 Home work:
 1. Write a function 'void resetFilter(biquad_t *filter)' that sets all struct members to zero!
 2. Call this function at the end of the main(), put &high_shelf as parameter into it and print the filter coeffcients!
+
+void setToZero(biquad_t *filter) {
+	filter->fs = 0;
+	filter->fc = 0;
+	filter->q = 0;
+	filter->gain = 0;
+	filter->a0 = 0;
+	filter->a1 = 0;
+	filter->a2 = 0;
+	filter->b1 = 0;
+	filter->b2 = 0;
+}
 */

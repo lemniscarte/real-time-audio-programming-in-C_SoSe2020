@@ -47,6 +47,8 @@ typedef struct Biquad {
 
 // Declaration of function (this could move to a file.h header file later)
 void printState(biquad_t *filter);
+void printAllFilterParams(biquad_t *filter);
+
 
 int main() {
   biquad_t currentFilter;
@@ -55,8 +57,22 @@ int main() {
   printf("currentFilter.type: %d\n", currentFilter.type);
   printf("currentFilter.state: %d\n", currentFilter.state);
   
+  // Lowpass
+  biquad_t homeworkFilter;
+  homeworkFilter.state = standby_mode;
+  homeworkFilter.type = bq_type_lowpass;
+  homeworkFilter.fs = 441000;		// Sample rate	
+  homeworkFilter.fc = 10000; 		// Hz
+  homeworkFilter.q = 0.7071; 		// Q
+  homeworkFilter.gain = 6;  			// dB
+  homeworkFilter.a0 = 0.251379;		// Parameter a0
+  homeworkFilter.a1 = 0.502758;		// Parameter a1
+  homeworkFilter.a2 = 0.251379;		// Parameter a2
+  homeworkFilter.b1 = -0.171241;		// Parameter b1
+  homeworkFilter.b2 = 0.1767567;		// Parameter b2
+  
   printState(&currentFilter);
-
+  //printAllFilterParams(&homeworkFilter);
   return 0;
 }
 
@@ -88,5 +104,64 @@ void printState(biquad_t *filter) {
 
 /*
 Home work:
-Expand the 'void printParameters(biquad_t *filter)' from 08_typedefs.c in such a way that it also outputs the filter state and the filter type!
+Expand the 'void printParameters(biquad_t *filter)' from 13_typedefs.c in such a way that it also outputs the filter state and the filter type!
+
+void printAllFilterParams(biquad_t *filter) {
+	printf("\n");
+	printf("\nFilter parameter: \n%.f,\n%.f,\n%f,\n%.f,\n%f,\n%f,\n%f,\n%f,\n%f", 
+	filter->fs, filter->fc, filter->q, filter->gain, filter->a0, filter->a1, filter->a2, filter->b1, filter->b2);
+	
+	printf("\n");
+    switch(filter->state) {
+      case active_mode:
+      printf("active_mode");
+      break;
+
+      case standby_mode:
+      printf("standby_mode");
+      break;
+
+      case edit_mode:
+      printf("edit_mode");
+      break;
+	  
+      default:
+      printf("undefined state");
+      break;
+    }
+	
+	printf("\n");
+	switch(filter->type) {
+		case bq_type_lowpass:
+		printf("bq_type_lowpass");
+		break;
+		
+		case bq_type_highpass:
+		printf("bq_type_highpass");
+		break;
+		
+		case bq_type_bandpass:
+		printf("bq_type_bandpass");
+		break;
+		
+		case bq_type_notch:
+		printf("bq_type_notch");
+		break;
+		
+		case bq_type_peak:
+		printf("bq_type_peak");
+		break;
+		
+		case bq_type_lowshelf:
+		printf("bq_type_lowshelf");
+		break;
+		
+		case bq_type_highshelf:
+		printf("bq_type_highshelf");
+		break;
+		
+		default: printf("that should not happen, filter not defined.");
+	}
+}
+
 */

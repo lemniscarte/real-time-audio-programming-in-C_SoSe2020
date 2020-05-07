@@ -21,7 +21,6 @@ enum states {
 
 
 int main() {
-
    enum Filters currentFilter = bq_type_highshelf;
    printf("currentFilter: %d\n", currentFilter);
 
@@ -32,4 +31,38 @@ int main() {
 Homework:
 Write a function 'printFilterType(enum Filters *filter)' that prints the filter type instead of the enum number!
 Tip: Use the 'switch' statement!
+
+void printFilterType(enum Filters *filter) {
+	switch(*filter) {
+		case 0:
+		printf("bq_type_lowpass");
+		break;
+		
+		case 1:
+		printf("bq_type_highpass");
+		break;
+		
+		case 2:
+		printf("bq_type_bandpass");
+		break;
+		
+		case 3:
+		printf("bq_type_notch");
+		break;
+		
+		case 4:
+		printf("bq_type_peak");
+		break;
+		
+		case 5:
+		printf("bq_type_lowshelf");
+		break;
+		
+		case 6:
+		printf("bq_type_highshelf");
+		break;
+		
+		default: printf("that should not happen, filter not defined.");
+	}
+}
 */

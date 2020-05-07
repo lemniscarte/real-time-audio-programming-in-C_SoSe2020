@@ -31,7 +31,11 @@ int main( ) {
 
 /*
 Home work:
-1. For holding filter parameters (such as a0, a1, a2, b1, b2), would you use a struct or an union?
-2. For holding filter types (like high_shelf_, low_pass ect.), would you use a struct or an union?
+1.	For holding filter parameters (such as a0, a1, a2, b1, b2), would you use a struct or an union?
+2.	For holding filter types (like high_shelf_, low_pass ect.), would you use a struct or an union?
 Tip: Think about how the variables will be used at the same time?
+
+1. 	Struct, because you probably need all members at the same time.
+2. 	You can use an enumeration here. A union is suitable for storing a data type from a group of different 
+	data types in one place.
 */

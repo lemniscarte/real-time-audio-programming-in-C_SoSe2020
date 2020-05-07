@@ -21,4 +21,7 @@ int main()
 /*
 Home work:
 What is '985824 % 23471'?
+
+
+42
 */

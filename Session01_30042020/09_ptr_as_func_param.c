@@ -24,6 +24,9 @@ int addTwoIntegers(int *x, int *y) {
    	return z;
 }
 
+long senselessModuloFunc(long *num_1, long *num_2) {
+	return *num_1 % *num_2;
+}
 
 int main() {
 	printf("\n--- Example 01 ----\n");
@@ -57,4 +60,21 @@ int main() {
 /*
 Home work:
 Write a function that takes two pointers to a long number as parameter and returns a long result after a modulo operation.
+
+long senselessModuloFunc(long *num_1, long *num_2) {
+	return *num_1 % *num_2;
+}
+
+int main() {
+	long senseless_result;
+	long num1 = 3333;
+	long num2 = 2222;
+	senseless_result = senselessModuloFunc(&num1, &num2);
+	printf("senseless result: %ld", senseless_result);
+
+	return 0;
+}
+
 */
+
+

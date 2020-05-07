@@ -30,4 +30,7 @@ int main()
 /*
 Home work:
 Read about "call by value" and "call by reference" in your favorite C programming book and explain the difference!
+
+Call by value: you work with a copy of the var.
+Call by reference: you work directly with the var in the memory.
 */
