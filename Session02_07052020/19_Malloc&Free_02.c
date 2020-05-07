@@ -40,3 +40,10 @@ int main()
     
     return 0;
 }
+
+// Homework: Write thePermanentHeap() function with pointer
+// arithmetic instead of the array index access method:
+// *aHeapPointer++ = i;
+// In the main function print out all values instead of
+// the index 4 only. Be careful
+// what you return in thePermanentHeap() function!

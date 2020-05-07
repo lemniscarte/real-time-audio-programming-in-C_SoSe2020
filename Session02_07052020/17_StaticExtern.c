@@ -44,3 +44,7 @@ int main(void)
     
     return 0;
 }
+
+// Homework: Move the variable j to the file
+// 17_StaticExternGlobalVar.c and access it in main.c with
+// the keyword extern.

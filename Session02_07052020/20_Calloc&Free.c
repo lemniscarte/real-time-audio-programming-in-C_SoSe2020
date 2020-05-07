@@ -47,5 +47,15 @@ int main()
     return 0;
 }
 
+// Homework: Write a function that allocates memory for
+// integers with calloc and returns the allocated
+// memory as an int pointer.
+// The function should have two int arguments:
+// the number of integers to allocate, and a
+// default value. Every int field of the allocated memory
+// should be initialized with this default value.
+// call this function from main instead of calling calloc
+// directly.
+
 
 
