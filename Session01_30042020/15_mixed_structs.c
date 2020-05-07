@@ -9,6 +9,7 @@ enum States {
     edit_mode,
 } state;
 
+//// This can also be made to a type_t
 // typedef enum States {
 //     active_mode = 0,
 //     standby_mode,
