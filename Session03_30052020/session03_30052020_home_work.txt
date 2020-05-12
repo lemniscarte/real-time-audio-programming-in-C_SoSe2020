@@ -1,0 +1,12 @@
+To be done at 7/06/2020 04:00 pm
+
+Pure Date:
+
+1. Create a PD-Patch and build a simple additive synthesis with a base tone and a small number of related overtones. 
+
+C-coding:
+
+1. Change example 24_simple_linked_list into a simple_circular_linked_list!
+2. Change example 25_double_linked_list into a double_circular_linked_list!
+
+Tip: All you have to do is connect the head and tail and rewrite all related cases.

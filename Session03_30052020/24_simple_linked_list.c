@@ -1,7 +1,7 @@
 /*
  LinkedList.c
- a simple linked list
- found in "Wolf (2010) 'Grundkurs C'"
+ a simple linked list example based on
+ "Wolf (2010) 'Grundkurs C'"
  (kap014/listing001.c)
  */
 
