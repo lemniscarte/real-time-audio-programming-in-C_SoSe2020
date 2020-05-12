@@ -25,7 +25,6 @@ int main() {
 	a = b;
 	b = temp_ptr;
 	
-	//swap_two_ptrs(a, b);
 	// Print the data by dereferencing the ptrs again
 	printf("*a = %d\t(in memory: %p)\n", *a, a);
 	printf("*b = %d\t(in memory: %p)\n", *b, b);
