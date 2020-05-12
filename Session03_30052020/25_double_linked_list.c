@@ -1,7 +1,7 @@
 
 
 
-#include "25_DoublyLinkedLists.h"
+#include "25_double_linked_list.h"
 
 
 int main() {
@@ -74,7 +74,7 @@ bool check_validity(p_node_t node) {
 }
 
 
-/* Function to delete a node in a Doubly Linked List.
+/* Function to delete a node in a double linked list.
  p_head --> pointer to head node pointer.
  del  -->  pointer to node to be deleted. */
 void delete_node(p_node_t *p_head, p_node_t p_del)
@@ -108,7 +108,7 @@ void delete_node(p_node_t *p_head, p_node_t p_del)
 
 
 /* Function to delete the node at the given position
- in the doubly linked list */
+ in the double linked list */
 void delete_node_at_position(p_node_t *p_head, int position)
 {
     /* If list is NULL or invalid position is given */
@@ -124,7 +124,7 @@ void delete_node_at_position(p_node_t *p_head, int position)
         p_current = p_current->p_next;
     
     /* If position is greater than the number of nodes
-     in the doubly linked list */
+     in the double linked list */
     if (p_current == NULL) {
         printf("This is not a valid position!\nYou currently have %d node(s).\n", i);
         return;
@@ -139,7 +139,7 @@ void delete_node_at_position(p_node_t *p_head, int position)
 
 
 /* Function to insert a node at the beginning
- of the Doubly Linked List */
+ of double linked list */
 void push(p_node_t *p_head)
 {
     /* Allocate node */
@@ -174,8 +174,7 @@ void push(p_node_t *p_head)
 }
 
 
-/* Function to print nodes in a given doubly
- linked list */
+/* Function to print nodes in a given double linked list */
 void list_nodes(p_node_t p_head) {
     if (check_validity(p_head) == false) return;
     
