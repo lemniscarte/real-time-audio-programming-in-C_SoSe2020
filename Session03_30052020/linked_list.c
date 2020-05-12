@@ -11,11 +11,13 @@
 #include <stddef.h>
 
 // Globals
+// Define node type
 typedef struct Node {
     int data;
     struct Node *next;
 } node_t;
 
+// Define node pointer type
 typedef node_t *p_node_t;
 p_node_t g_p_head;
 
@@ -29,9 +31,12 @@ bool list_available(void);
 
 
 int main() {
+	// Declare vars
     int choice, val;
+	// Set global head ptr to NULL
     g_p_head = NULL;
 
+	// Ask for a user action
     do {
         printf(" -1- Insert new node\n");
         printf(" -2- Remove node with value\n");
@@ -77,45 +82,58 @@ int main() {
 
 // Function implementation
 void insert_node(p_node_t new_node) {
+	// Declare help ptr
     p_node_t p_help;
 
+	// If g_p_head == NULL, there is no list
+	// Make first entry
     if (g_p_head == NULL) {
         g_p_head = new_node;
+		// Set next ptr to NULL, because its the only node (last one and first too)
         new_node->next = NULL;
     }
     else {
+		// We have nodes already, then save the head ptr into the help ptr
         p_help = g_p_head;
+		// And jump forwards till we find the last node that is pointing to NULL
         while( p_help->next != NULL ) {
             p_help = p_help->next;
         }
+		// Place the new node at last position
         p_help->next = new_node;
+		// And tell it, thats the last one in this chain
         new_node->next = NULL;
     }
 }
 
 
 void new_node(void) {
+	// Allocate node memory from the heap
     p_node_t new_node = malloc(sizeof(node_t));
 
+	// If we get no memory - stop program
     if (new_node == NULL) {
         printf("No memory!?\n");
         return;
     }
 
+	// Ask for data and save it into the node var
     printf("Value for new node: ");
     do {
         scanf("%d", &new_node->data);
     }
     while( getchar() != '\n');
-
+	// Call function that inserts the new node
     insert_node(new_node);
 }
 
 
 
 void remove_node_with_value(int val) {
+	// Declare two help ptrs
     p_node_t p_help_1;
     p_node_t p_help_2;
+	// Give the found flag a false by default
     bool found = false;
 
     // Check if there is a list
