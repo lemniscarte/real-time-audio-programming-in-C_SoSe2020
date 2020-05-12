@@ -197,7 +197,6 @@ void list_nodes() {
 
 
 void search_node(int val) {
-
     // Check if there is a list
     if (list_available() == false) return;
     
