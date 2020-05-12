@@ -1,10 +1,3 @@
-/*
- linked_list.c
- a simple linked list
- found in "Wolf (2010) 'Grundkurs C'"
- (kap014/listing001.c)
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -143,9 +136,9 @@ void remove_node_with_value(int val) {
             found = true;
             // Next node is the new head
             p_help_1 = g_p_head->next;
+            // Release memory of deleted first node
+            free(g_p_head);
             g_p_head = p_help_1;
-			// Release memory of deleted node (IMPORTANT!)
-            free(p_help_1);
             return;
         }
         // Search the data in the rest of the list
@@ -161,8 +154,10 @@ void remove_node_with_value(int val) {
                     p_help_1->next = p_help_2->next;
                   // Free the memory of the removed node
                   free (p_help_2);
+                  // And leave
                     break;
                 }
+                // Step forward
                 p_help_1 = p_help_2;
             } // End while
         } // End else
@@ -226,4 +221,3 @@ void search_node(int val) {
     if (found == false) printf("Data %d not found!\n", val);
     }
 }
-
