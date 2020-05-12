@@ -5,22 +5,23 @@
 
 
 int main() {
-	// Init some data
+	// Declare some vars and var_ptrs
 	int x, y, temp_var, *a, *b, *temp_ptr;
+	
+	printf("\n------------------------------------\n");
+	printf("--------- Swapping pointers --------\n");
+	printf("------------------------------------\n\n");
 	x = 42;
 	y = 84;
-	printf("\n------------------------------------\n\n");
-	printf("\n----------Swapping pointers---------\n\n");
-	printf("\n------------------------------------\n\n");
+
 	// Write the memory place of the data into the ptrs
 	a = &x;
 	b = &y;
 	// Print the data by dereferencing the ptrs
 	printf("*a = %d\t(in memory: %p)\n", *a, a);
 	printf("*b = %d\t(in memory: %p)\n", *b, b);
-	// Call swap func
-	printf("\n\nSwap pointers:\n");
 	
+	printf("\n\nSwap pointers:\n");
 	temp_ptr = a;
 	a = b;
 	b = temp_ptr;
@@ -35,9 +36,11 @@ int main() {
 	} else {
 		printf("Pointers not swapped!\n");
 	}
-	printf("\n------------------------------------\n\n");
-	printf("\n----------Swapping values-----------\n\n");
-	printf("\n------------------------------------\n\n");
+	
+	
+	printf("\n------------------------------------\n");
+	printf("--------- Swapping values ----------\n");
+	printf("------------------------------------\n\n");
 	x = 42;
 	y = 84;
 	// Write the memory place of the data into the ptrs
@@ -46,11 +49,12 @@ int main() {
 	// Print the data by dereferencing the ptrs
 	printf("*a = %d\t(in memory: %p)\n", *a, a);
 	printf("*b = %d\t(in memory: %p)\n", *b, b);
-	// Call swap func
+
 	printf("\n\nSwap values:\n");
 	temp_var = *a;
 	*a = *b;
 	*b = temp_var;
+	
 	// Print the data by dereferencing the ptrs again
 	printf("*a = %d\t(in memory: %p)\n", *a, a);
 	printf("*b = %d\t(in memory: %p)\n", *b, b);
