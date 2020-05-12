@@ -138,6 +138,7 @@ void remove_node_with_value(int val) {
             p_help_1 = g_p_head->next;
             // Release memory of deleted first node
             free(g_p_head);
+			// Store new first node in global head ptr
             g_p_head = p_help_1;
             return;
         }
@@ -153,7 +154,7 @@ void remove_node_with_value(int val) {
                     found = true;
                     p_help_1->next = p_help_2->next;
                   // Free the memory of the removed node
-                  free (p_help_2);
+                  free(p_help_2);
                   // And leave
                     break;
                 }
