@@ -30,9 +30,12 @@ bool list_available(void);
 
 
 int main() {
+    // Declare some vars
     int choice, val;
+    // In the beginning it was nothing - so the global head ptr is NULL
     g_p_head = NULL;
 
+    // Command line interface (CLI)
     do {
         printf(" -1- Insert new node\n");
         printf(" -2- Remove node with value\n");
@@ -75,48 +78,58 @@ int main() {
 }
 
 
-
 // Function implementation
-void insert_node(p_node_t new_node) {
+void insert_node(p_node_t new_node)
+{
+    // Just a help ptr to work with
     p_node_t p_temp;
 
+    // Case, if this is the first node
     if (g_p_head == NULL) {
         g_p_head = new_node;
         new_node->next = NULL;
     }
+    // Case if there exist nodes already
     else {
+        // Catch the global head
         p_temp = g_p_head;
+        // Step forward till the last node - it will point to NULL
         while( p_temp->next != NULL ) {
             p_temp = p_temp->next;
         }
-        p_temp->next = new_node;
-        new_node->next = NULL;
+        // Now the end is reached, insert the new node
+        p_temp->next = new_node;    // former last node points to new node
+        new_node->next = NULL;      // new node is new last node & points to NULL
     }
 }
 
 
-void new_node(void) {
+void new_node(void)
+{
+    // Allocate the memory for a new node from heap
     p_node_t new_node = malloc(sizeof(node_t));
-
+    // Catch possible memory error, but this will probably never happen
     if (new_node == NULL) {
         printf("No memory!?\n");
         return;
     }
-
+    // Ask for node data
     printf("Value for new node: ");
     do {
         scanf("%d", &new_node->data);
     }
     while( getchar() != '\n');
-
+    // Insert the new node
     insert_node(new_node);
 }
 
 
-
-void remove_node_with_value(int val) {
+void remove_node_with_value(int val)
+{
+    // Declare two help ptr to work with
     p_node_t p_temp_1;
     p_node_t p_temp_2;
+    // Init a found flag with default false
     bool found = false;
 
     // Check if there is a list
@@ -149,22 +162,25 @@ void remove_node_with_value(int val) {
             } // End while
         } // End else
     } // End if
-
+    // Let the user know if the search was unsuccessful
     if (found == false) printf("Data %d not found!\n", val);
-
 }
 
-bool list_available() {
+
+bool list_available()
+{
     // Check if there is a list
     if (g_p_head == NULL) {
-        printf("No list,\nyou have to create a node first!\n");
+        printf("No list, you have to create a node first!\n");
         return false;
     } else {
         return true;
     }
 }
 
-void list_nodes() {
+
+void list_nodes()
+{
     // Check if there is a list
     if (list_available() == false) return;
     // Copy the head ptr
@@ -179,9 +195,8 @@ void list_nodes() {
 }
 
 
-
-void search_node(int val) {
-
+void search_node(int val)
+{
     // Check if there is a list
     if (list_available() == false) return;
     
@@ -200,14 +215,14 @@ void search_node(int val) {
     // Traverse the list till data is found
     while (p_temp->next != NULL) {
             p_temp = p_temp->next;
-        
+            // Handle data found
             if (p_temp->data == val) {
                 printf ("Data %d found!\n", p_temp->data);
                 found = true;
                 return;
             }
     }
-
+    // Let the user know if the search was unsuccessful
     if (found == false) printf("Data %d not found!\n", val);
     }
 }
