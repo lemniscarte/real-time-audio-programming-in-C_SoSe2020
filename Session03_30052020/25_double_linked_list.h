@@ -1,12 +1,6 @@
-//
-//  25_DoublyLinkedLists.h
-//  Einführung in C
-//
-//  mail: markus.haedrich@tu-berlin.de
-//
 
-#ifndef _25_DoublyLinkedLists_h
-#define _25_DoublyLinkedLists_h
+#ifndef _25_double_linked_list_h
+#define _25_double_linked_list_h
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,9 +14,9 @@ typedef struct Node {
 } node_t;
 
 typedef node_t *p_node_t;
-/* Store head */
+/* Store global head */
 p_node_t g_p_head;
-/* Store tail */
+/* Store global tail */
 p_node_t g_p_tail;
 
 // Declarations
@@ -30,11 +24,12 @@ bool check_validity(p_node_t node);
 p_node_t get_tail(p_node_t p_head); //??
 void delete_node(p_node_t *p_head, p_node_t p_del);
 void delete_node_at_position(p_node_t *head_ref, int position);
-void push(p_node_t *p_head);
+void insert_at_beginning(p_node_t *p_head);
+void insert_at_end(p_node_t *p_tail);
 void list_nodes(struct Node* head);
 void search_node_backwards(p_node_t p_tail, int searched_data);
 void search_node_forward(p_node_t p_head, int searched_data);
 
 
 
-#endif /* _25_DoublyLinkedLists_h */
+#endif /* _25_double_linked_list */
