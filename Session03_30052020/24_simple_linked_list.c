@@ -1,6 +1,7 @@
 /*
- LinkedList.c
- a simple linked list example based on
+ simple_linked_list.c
+ 
+ A simple linked list example based on
  "Wolf (2010) 'Grundkurs C'"
  (kap014/listing001.c)
  */
@@ -77,18 +78,18 @@ int main() {
 
 // Function implementation
 void insert_node(p_node_t new_node) {
-    p_node_t p_help;
+    p_node_t p_temp;
 
     if (g_p_head == NULL) {
         g_p_head = new_node;
         new_node->next = NULL;
     }
     else {
-        p_help = g_p_head;
-        while( p_help->next != NULL ) {
-            p_help = p_help->next;
+        p_temp = g_p_head;
+        while( p_temp->next != NULL ) {
+            p_temp = p_temp->next;
         }
-        p_help->next = new_node;
+        p_temp->next = new_node;
         new_node->next = NULL;
     }
 }
@@ -114,8 +115,8 @@ void new_node(void) {
 
 
 void remove_node_with_value(int val) {
-    p_node_t p_help_1;
-    p_node_t p_help_2;
+    p_node_t p_temp_1;
+    p_node_t p_temp_2;
     bool found = false;
 
     // Check if there is a list
@@ -124,27 +125,27 @@ void remove_node_with_value(int val) {
         if (g_p_head->data == val) {
             found = true;
             // Next node is the new head
-            p_help_1 = g_p_head->next;
-            g_p_head = p_help_1;
-            free(p_help_1);         
+            p_temp_1 = g_p_head->next;
+            g_p_head = p_temp_1;
+            free(p_temp_1);
             return;
         }
         // Search the data in the rest of the list
         else
         {   // Start at the beginning
-            p_help_1 = g_p_head;
+            p_temp_1 = g_p_head;
             // Traverse the list till searched data is found
-            while (p_help_1->next != NULL) {
-                p_help_2 = p_help_1->next;
+            while (p_temp_1->next != NULL) {
+                p_temp_2 = p_temp_1->next;
                 // Cut the node by connecting the previous and the next node together
-                if (p_help_2->data == val) {
+                if (p_temp_2->data == val) {
                     found = true;
-                    p_help_1->next = p_help_2->next;
+                    p_temp_1->next = p_temp_2->next;
                   // Free the memory of the removed node
-                  free (p_help_2);
+                  free (p_temp_2);
                     break;
                 }
-                p_help_1 = p_help_2;
+                p_temp_1 = p_temp_2;
             } // End while
         } // End else
     } // End if
@@ -166,13 +167,15 @@ bool list_available() {
 void list_nodes() {
     // Check if there is a list
     if (list_available() == false) return;
-
-    p_node_t p_help = g_p_head;
-
-    while (p_help != NULL) {
-        printf ("%d\n", p_help->data);
-        p_help = p_help->next;
+    // Copy the head ptr
+    p_node_t p_temp = g_p_head;
+    // Move forward with temporary ptr
+    while (p_temp != NULL) {
+        printf ("%d, ", p_temp->data);
+        p_temp = p_temp->next;
     }
+    
+    printf("\n");
 }
 
 
@@ -184,22 +187,22 @@ void search_node(int val) {
     
     if (list_available()) {
     // Get the head node pointer
-    p_node_t p_help = g_p_head;
+    p_node_t p_temp = g_p_head;
     bool found = false;
 
     // Case the data is in the head node
-    if (p_help->data == val) {
-        printf ("Data %d found!\n", p_help->data);
+    if (p_temp->data == val) {
+        printf ("Data %d found!\n", p_temp->data);
         found = true;
         return;
     }
 
     // Traverse the list till data is found
-    while (p_help->next != NULL) {
-            p_help = p_help->next;
+    while (p_temp->next != NULL) {
+            p_temp = p_temp->next;
         
-            if (p_help->data == val) {
-                printf ("Data %d found!\n", p_help->data);
+            if (p_temp->data == val) {
+                printf ("Data %d found!\n", p_temp->data);
                 found = true;
                 return;
             }
