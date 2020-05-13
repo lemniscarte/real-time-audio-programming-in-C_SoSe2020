@@ -21,7 +21,7 @@ p_node_t g_p_tail;
 
 // Declarations
 bool check_validity(p_node_t node);
-p_node_t get_tail(p_node_t p_head); //??
+p_node_t get_tail(p_node_t p_head); 
 void delete_node(p_node_t *p_head, p_node_t p_del);
 void delete_node_at_position(p_node_t *head_ref, int position);
 void insert_at_beginning(p_node_t *p_head);
