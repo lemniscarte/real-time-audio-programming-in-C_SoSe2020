@@ -317,7 +317,7 @@ p_node_t delete_node_at_index(p_node_t *head_ref, unsigned int index)
     
     // *** YOU WRITE THIS CODE ***
     
-    // Set node to delete to the head
+    // Set node to delete to the head (start point for search)
    
     
     // Search index

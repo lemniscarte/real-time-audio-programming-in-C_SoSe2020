@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-/* A node of the doubly linked list */
+/* A node of the double linked list */
 typedef struct Node {
     int data;
     struct Node* p_next;
