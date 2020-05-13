@@ -312,25 +312,26 @@ p_node_t insert_new_node_after_node(p_node_t *head_ref, int prev_data, int data)
 
 p_node_t delete_node_at_index(p_node_t *head_ref, unsigned int index)
 {
+    // Check if there exist nodes at all
     if (is_empty(head_ref)) return NULL;
     
+    // *** YOU WRITE THIS CODE ***
+    
     // Set node to delete to the head
-    p_node_t temp = *head_ref;
+   
     
     // Search index
-    unsigned int i=0;
-    do {
-        // Create and insert new node after index
-        if (i == index) return delete_node(head_ref, temp);
-        temp = temp->next;
+ 
+    // Create and insert new node after index
+    
         
-        // Count iterations
-        i++;
+    // Count iterations
+      
         
-    } while (temp != *head_ref);
+    
     
     // Message if the user request exceeds the list length
-    if (index > i) printf("Entered index not possible, list only have %d nodes\n", i);
+  
     
     return *head_ref;
 }
