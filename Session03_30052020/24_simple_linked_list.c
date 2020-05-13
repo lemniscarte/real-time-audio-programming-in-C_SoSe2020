@@ -126,7 +126,7 @@ void remove_node_with_value(int val) {
             // Next node is the new head
             p_help_1 = g_p_head->next;
             g_p_head = p_help_1;
-            free(p_help_1);         // Bug, free g_p_head instead
+            free(p_help_1);         
             return;
         }
         // Search the data in the rest of the list
