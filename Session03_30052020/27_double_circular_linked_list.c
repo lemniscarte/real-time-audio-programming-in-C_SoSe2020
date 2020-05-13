@@ -312,7 +312,7 @@ p_node_t insert_new_node_after_node(p_node_t *head_ref, int prev_data, int data)
 
 p_node_t delete_node_at_index(p_node_t *head_ref, unsigned int index)
 {
-    // Check if there exist nodes at all
+    // Check if there are any nodes
     if (is_empty(head_ref)) return NULL;
     
     // *** YOU WRITE THIS CODE ***
