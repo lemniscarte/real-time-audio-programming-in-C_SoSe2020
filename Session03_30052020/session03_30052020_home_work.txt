@@ -6,7 +6,7 @@ Pure Date:
 
 C-coding:
 
-1. Change example 24_simple_linked_list into a simple_circular_linked_list!
-2. Change example 25_double_linked_list into a double_circular_linked_list!
+1. Write the function "void insert_node(p_node_t new_node)" ind 26_simple_circular_linked_list.c!
+2. Write the function "p_node_t delete_node(p_node_t *head_ref, p_node_t del)" in  27_double_circular_linked_list.c!
 
 Tip: All you have to do is connect the head and tail and rewrite all related cases.
