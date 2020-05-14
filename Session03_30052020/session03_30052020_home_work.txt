@@ -10,5 +10,6 @@ C-coding:
 1a. Write the function "void insert_node(p_node_t new_node)" ind 26_simple_circular_linked_list.c!
 1b. Write the function "p_node_t delete_node(p_node_t *head_ref, p_node_t del)" in  27_double_circular_linked_list.c!
 
-2. Take a look at the comments in example 27 because doxygen style is expected for your future project work. Install Doxygen on your computer and read an introduction.
+2. Installiert den GNU C-Compiler gcc, compiliert eine Linked List und führt das Binary im Terminal aus!
+3. Take a look at the comments in example 27 because doxygen style is expected for your future project work. Install Doxygen on your computer and read an introduction.
 
