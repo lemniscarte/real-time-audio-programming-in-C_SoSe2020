@@ -36,16 +36,19 @@ int main() {
     g_p_head = NULL;
 
     // Command line interface (CLI)
+    // This runs in a loop till the user enters a zero
     do {
+        printf("\n");
         printf(" -1- Insert new node\n");
         printf(" -2- Remove node with value\n");
         printf(" -3- List all nodes\n");
         printf(" -4- Search node\n");
         printf(" -0- Exit\n");
         printf("Choose an action: ");
-
+     
+        // Get and save user input
         scanf ("%d", &choice);
-
+        // Handle user input
         switch (choice) {
             case 1: new_node();
                 break;
