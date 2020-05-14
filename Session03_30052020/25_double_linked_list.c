@@ -9,6 +9,7 @@ int main() {
     int choice, position, data;
     
     do {
+        printf("\n");
         printf (" -1- Insert new node at beginning\n");
         printf (" -2- Insert new node at the end\n");
         printf (" -3- Remove node at position\n");
