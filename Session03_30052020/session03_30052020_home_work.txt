@@ -6,7 +6,7 @@ Pure Date:
 
 C-coding:
 
-1. Complete one of the following tasks a) or b)!
+1. Complete at least one of the following tasks a) or b)!
 1a. Write the function "void insert_node(p_node_t new_node)" ind 26_simple_circular_linked_list.c!
 1b. Write the function "p_node_t delete_node(p_node_t *head_ref, p_node_t del)" in  27_double_circular_linked_list.c!
 
