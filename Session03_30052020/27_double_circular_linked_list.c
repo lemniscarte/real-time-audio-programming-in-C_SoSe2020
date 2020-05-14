@@ -37,7 +37,8 @@ int main(int argc, char* argv[]) {
 
     // Menue
     do {
-        printf("\n -1- Insert new node at index\n");
+        printf("\n");
+        printf(" -1- Insert new node at index\n");
         printf(" -2- Insert new node after node\n");
         printf(" -3- Delete node at index\n");
         printf(" -4- Delete node with data\n");
