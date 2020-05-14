@@ -1,6 +1,7 @@
 #include "25_double_linked_list.h"
 
 int main() {
+    
     /* Start with the empty list using g_p_node_t */
     g_p_head = NULL;
     g_p_tail = NULL;
@@ -58,6 +59,7 @@ int main() {
     
     return 0;
 }
+
 
 /* Help function for cleaner code */
 bool check_validity(p_node_t node) {
@@ -131,6 +133,10 @@ void delete_node_at_position(p_node_t *p_head, int position)
     delete_node(p_head, p_current);
 }
 
+
+
+
+
 /* Function to insert a node at the beginning
  of the Doubly Linked List */
 void insert_at_beginning(p_node_t *p_head)
@@ -146,7 +152,7 @@ void insert_at_beginning(p_node_t *p_head)
     
     printf("Value for new node: ");
     do { scanf("%d", &p_new_node->data); }
-    while(getchar() != '\n');
+    while( getchar() != '\n');
     
     /* Since we are adding at the beginning,
      prev is always NULL */
@@ -197,11 +203,14 @@ void insert_at_end(p_node_t *p_head)
     } else { // Case 2, all other cases
         p_node_t p_old_tail = get_tail(g_p_head);
         // Glue the new node onto the old tail
-        p_new_node->p_prev = g_p_tail;
+        p_new_node->p_prev = p_old_tail;
         p_old_tail->p_next = p_new_node;
+        // Update global tail
+        g_p_tail = p_new_node;
     }
 
 }
+
 
 /* Function to print nodes in a given double
  linked list */
@@ -240,8 +249,10 @@ void search_node_forward(p_node_t p_head, int searched_data)
     }
 }
 
-void search_node_backwards(p_node_t p_tail, int searched_data) 
-{
+
+
+void search_node_backwards(p_node_t p_tail, int searched_data) {
+    
     /* If list is NULL or invalid position is given */
     if (check_validity(p_tail) == false) return;
     
@@ -264,8 +275,8 @@ void search_node_backwards(p_node_t p_tail, int searched_data)
     
 }
 
-p_node_t get_tail(p_node_t p_head) 
-{
+p_node_t get_tail(p_node_t p_head) {
+    
     p_node_t p_tail = NULL;
     p_node_t p_current = p_head;
     
