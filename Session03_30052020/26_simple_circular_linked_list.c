@@ -9,6 +9,7 @@ int main() {
     current = NULL;
     
     do {
+        printf("\n");
         printf (" -1- Insert new node\n");
         printf (" -2- Remove node with value\n");
         printf (" -3- List all nodes\n");
