@@ -142,7 +142,7 @@ void remove_node_with_value(int val)
             found = true;
             // Next node is the new head
             p_temp_1 = g_p_head->next;
-            g_p_head = NULL;
+            g_p_head = p_temp_1;
             free(p_temp_1);
             return;
         }
