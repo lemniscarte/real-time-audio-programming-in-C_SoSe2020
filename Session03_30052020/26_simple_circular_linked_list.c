@@ -9,7 +9,6 @@ int main() {
     current = NULL;
     
     do {
-        printf("\n");
         printf (" -1- Insert new node\n");
         printf (" -2- Remove node with value\n");
         printf (" -3- List all nodes\n");
@@ -59,20 +58,19 @@ bool is_empty() {
 }
 
 
-// Insert link at the first location
+//insert link at the first location
 void insert_node(p_node_t new_node) {
-    // *** You write this code ***
-    
     // Check if there is a list
     if (is_empty()) {
-      
+        g_p_head = new_node;
+        g_p_head->next = g_p_head;
         
     } else {
-        // Point it to old first node
-        
+        //point it to old first node
+        new_node->next = g_p_head;
         
         //point first to new first node
-        
+        g_p_head = new_node;
     }
 }
 
