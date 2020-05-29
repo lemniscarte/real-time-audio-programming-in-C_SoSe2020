@@ -103,14 +103,12 @@ void oneInt_bling(void *x)
     printf("%d\n", ((t_oneInt *)x)->val1);
 }
 
-
 /** @typedef struct with two @c int elements. */
 typedef struct _twoInt
 {
     int val1;                       /**< Struct @c t_twoInt variable. */
     int val2;                       /**< Struct @c t_twoInt variable. */
 } t_twoInt;
-
 
 /**
  *  @brief Constructor function for a @c t_twoInt object, that takes two @c int\n
@@ -129,7 +127,6 @@ void *twoInt_new(int v1, int v2)
     return (void *)x;       /**< Cast @c x to @c void pointer */
 }
 
-
 /**
  *  @brief Method to print the data of a @c t_twoInt object.
  *  @param x @c void pointer to an @c t_twoInt object.
@@ -138,7 +135,6 @@ void twoInt_bling(void *x)
 {
     printf("%d, %d\n", ((t_twoInt *)x)->val1, ((t_twoInt *)x)->val2);
 }
-
 
 /**
  *  @brief Function to register an object in the lookup table
@@ -153,7 +149,6 @@ void registerObject(char *name, new m, int argc)
     objectLookupTable[currentIndex].argc = argc;
     currentIndex++;
 }
-
 
 /**
  *  @brief Function to add a method of an object to the lookup table.
@@ -177,7 +172,6 @@ void addBling(char *name, bling b)
     objectLookupTable[i].blingMethod = b;
 }
 
-
 /**
  *  @brief Function that calls the @c blingMethod of a given object.
  *  @param name @c char pointer to an array with the object name.
@@ -198,8 +192,6 @@ void object_bling(char *name, void *x)
     // Call the @c blingMethod of the object pointed by @c x
     (objectLookupTable[i].blingMethod)(x);
 }
-
-
 
 /**
  *  @brief General initializer function.

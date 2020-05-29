@@ -85,7 +85,6 @@ typedef struct _oneInt {
     int val1;                       /**< Struct @c t_oneInt variable. */
 } t_oneInt;
 
-
 /**
  *  @brief Constructor function that takes a @c int value and returns a pointer\n
  *  to a new @c t_oneInt struct.
@@ -96,7 +95,6 @@ void *oneInt_new(int v1) {
     /**< Allocate memory for object @c x */
     t_oneInt *x = (t_oneInt *)malloc(sizeof(t_oneInt));
     x->val1 = v1;                   /**< Set value */
-    
     return (void *)x;               /**< Cast @c x to @c void pointer */
 }
 
@@ -106,7 +104,6 @@ typedef struct _twoInt {
     int val1;                       /**< Struct @c t_twoInt variable. */
     int val2;                       /**< Struct @c t_twoInt variable. */
 } t_twoInt;
-
 
 /**
  *  @brief Constructor function that takes two @c int values and returns \n
@@ -124,15 +121,11 @@ void *twoInt_new(int v1, int v2) {
     return (void *)x;               /**< Cast @c x to @c void pointer */
 }
 
-
-
 /** @brief Lookup table for your objects. */
 t_registeredIntObject objectLookupTable[MAXNUMBEROFOBJECTS];
 
-
 /** @var Just count the number of objects added to the lookup table later */
 int currentIndex = 0;
-
 
 /**
  *  @brief Function that registers your objects in your object lookup table.
@@ -148,7 +141,6 @@ void registerObject(char *name, new m, int argc)
     currentIndex++;
 }
 
-
 /**
  *  @brief Initializer of a new object.
  *  @discussion This function first searches the object for the name in the \n
@@ -162,6 +154,7 @@ void registerObject(char *name, new m, int argc)
  *  @todo Error handling if function returns @c NULL \n
  *  or @c i >= MAXNUMBEROFOBJECTS.
  */
+
 void *newObject(char *name, int *argv)
 {
     // Index of object count
@@ -232,7 +225,6 @@ int main()
     // Print objects data to console.
     printf("%d\n", a->val1);
     printf("%d, %d\n", b->val1, b->val2);
-    
     
     return 0;
 }
