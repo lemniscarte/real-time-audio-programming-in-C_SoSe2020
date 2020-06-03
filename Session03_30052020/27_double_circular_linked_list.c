@@ -3,7 +3,7 @@
 
 /*************************************************************/
 /**
- *  @file 28_double_circular_linked_list.c
+ *  @file 27_double_circular_linked_list.c
  *  @brief Main routine and implementation of the functions
  *  @author Markus Hädrich markus.haedrich@tu-berlin.de
  *
