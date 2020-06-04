@@ -2,5 +2,5 @@ To be done till 06/11/2020 04:00 pm
 
 Pure Data:
 
-Use the Tutorial and the Hints on https://github.com/pure-data/externals-howto.git to set up your SDK, compile the example externals and use them in a pd-patch!
+Use the Tutorial in this Folder to set up your SDK, compile the example externals and use them in a pd-patch!
 
