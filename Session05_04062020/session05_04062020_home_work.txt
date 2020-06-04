@@ -2,5 +2,8 @@ To be done till 06/11/2020 04:00 pm
 
 Pure Data:
 
-Use the Tutorial in this Folder to set up your SDK, compile the example externals and use them in a pd-patch!
+1. 	Use the Tutorial in this Folder to set up your SDK, compile the example externals and use them in a pd-patch!
+
+2. If you use Eclipse or Xcode, import the brickwall project and compile it. If you use Terminal and Makefile, then try to compile one of the examples in the Eclipse or Xcode folder
+
 
