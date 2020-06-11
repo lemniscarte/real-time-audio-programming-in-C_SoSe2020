@@ -167,6 +167,7 @@ void *newObject(char *name, int *argv)
         
         i++;
     }
+   
     
     // Routines for each case
     if(objectLookupTable[i].argc == 1)

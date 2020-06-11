@@ -19,7 +19,6 @@
 #include <stdlib.h>
 #include "stp_defines.h"
 
-
 /** Defines whether the input vector should be single or double precision */
 #define STP_INPUTVECTOR_USEFLOAT
 /** Defines whether the output vector should be single or double precision */
