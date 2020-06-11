@@ -24,7 +24,7 @@
 		E46AFD0B249212A700EEDF61 /* vas_mem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vas_mem.c; sourceTree = "<group>"; };
 		E46AFD0E249212AD00EEDF61 /* vas_mem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vas_mem.h; sourceTree = "<group>"; };
 		E46AFD0F249212AD00EEDF61 /* vas_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vas_util.h; sourceTree = "<group>"; };
-		FA2927EC1A899B4C005A2BA9 /* rtap_biquad.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = rtap_biquad.pd_darwin; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA2927EC1A899B4C005A2BA9 /* rtap_biquad~.pd_darwin */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "rtap_biquad~.pd_darwin"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 		FA2927ED1A899B4C005A2BA9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FA2927EC1A899B4C005A2BA9 /* rtap_biquad.pd_darwin */,
+				FA2927EC1A899B4C005A2BA9 /* rtap_biquad~.pd_darwin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +99,7 @@
 			);
 			name = rtap_biquad;
 			productName = "HelloWorld-pd-external";
-			productReference = FA2927EC1A899B4C005A2BA9 /* rtap_biquad.pd_darwin */;
+			productReference = FA2927EC1A899B4C005A2BA9 /* rtap_biquad~.pd_darwin */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +250,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = rtap_biquad;
+				PRODUCT_NAME = "rtap_biquad~";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "i386 x86_64";
@@ -279,7 +279,7 @@
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = rtap_biquad;
+				PRODUCT_NAME = "rtap_biquad~";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "i386 x86_64";

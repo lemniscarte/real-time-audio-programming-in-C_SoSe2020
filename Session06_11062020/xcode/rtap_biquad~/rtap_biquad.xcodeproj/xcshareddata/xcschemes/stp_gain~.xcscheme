@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
-               BuildableName = "stp_gain~.pd_darwin"
+               BuildableName = "rtap_biquad~.pd_darwin"
                BlueprintName = "rtap_biquad"
                ReferencedContainer = "container:rtap_biquad.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
-            BuildableName = "stp_gain~.pd_darwin"
+            BuildableName = "rtap_biquad~.pd_darwin"
             BlueprintName = "rtap_biquad"
             ReferencedContainer = "container:rtap_biquad.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
-            BuildableName = "stp_gain~.pd_darwin"
+            BuildableName = "rtap_biquad~.pd_darwin"
             BlueprintName = "rtap_biquad"
             ReferencedContainer = "container:rtap_biquad.xcodeproj">
          </BuildableReference>
