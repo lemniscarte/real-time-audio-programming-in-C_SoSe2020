@@ -1,0 +1,137 @@
+\hypertarget{structstp__gain}{}\section{stp\+\_\+gain Struct Reference}
+\label{structstp__gain}\index{stp\+\_\+gain@{stp\+\_\+gain}}
+
+
+A structure for a gain object ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stp\+\_\+gain.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{structstp__gain_a450c3ab9b94a4663caad892b7193b547}{level}
+\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$ \hyperlink{structstp__gain_a0979540c2a80ff589d209066faa0a5e9}{stp\+\_\+gain\+\_\+new} ()
+\begin{DoxyCompactList}\small\item\em Creates a new gain object~\newline
+ The function sets the level parameter of ~\newline
+ the gain class. \end{DoxyCompactList}\item 
+void \hyperlink{structstp__gain_ab36b939e4336809ad301f890303d98f9}{stp\+\_\+gain\+\_\+free} (\hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Frees a gain object~\newline
+ \end{DoxyCompactList}\item 
+void \hyperlink{structstp__gain_a40ce3451f3a3bf7bc7fe73e84d0cdfbe}{stp\+\_\+gain\+\_\+set\+Level} (\hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$x, float \hyperlink{structstp__gain_a450c3ab9b94a4663caad892b7193b547}{level})
+\begin{DoxyCompactList}\small\item\em Sets the gain parameter ~\newline
+ \end{DoxyCompactList}\item 
+void \hyperlink{structstp__gain_a2405b0c38009081fd715433b07971946}{stp\+\_\+gain\+\_\+perform} (\hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$x, S\+T\+P\+\_\+\+I\+N\+P\+U\+T\+V\+E\+C\+T\+OR $\ast$in, \hyperlink{stp__defines_8h_a58d557086e49ac00da395104c8fb500b}{S\+T\+P\+\_\+\+O\+U\+T\+P\+U\+T\+V\+E\+C\+T\+OR} $\ast$out, int vector\+Size)
+\begin{DoxyCompactList}\small\item\em Performs the level adjustment in realtime ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure for a gain object ~\newline
+ 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structstp__gain_ab36b939e4336809ad301f890303d98f9}\label{structstp__gain_ab36b939e4336809ad301f890303d98f9}} 
+\index{stp\+\_\+gain@{stp\+\_\+gain}!stp\+\_\+gain\+\_\+free@{stp\+\_\+gain\+\_\+free}}
+\index{stp\+\_\+gain\+\_\+free@{stp\+\_\+gain\+\_\+free}!stp\+\_\+gain@{stp\+\_\+gain}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+free()}{stp\_gain\_free()}}
+{\footnotesize\ttfamily void stp\+\_\+gain\+\_\+free (\begin{DoxyParamCaption}\item[{\hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Frees a gain object~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My gain object ~\newline
+ The function frees the allocated memory~\newline
+ of a gain object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structstp__gain_a0979540c2a80ff589d209066faa0a5e9}\label{structstp__gain_a0979540c2a80ff589d209066faa0a5e9}} 
+\index{stp\+\_\+gain@{stp\+\_\+gain}!stp\+\_\+gain\+\_\+new@{stp\+\_\+gain\+\_\+new}}
+\index{stp\+\_\+gain\+\_\+new@{stp\+\_\+gain\+\_\+new}!stp\+\_\+gain@{stp\+\_\+gain}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+new()}{stp\_gain\_new()}}
+{\footnotesize\ttfamily \hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$ stp\+\_\+gain\+\_\+new (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Creates a new gain object~\newline
+ The function sets the level parameter of ~\newline
+ the gain class. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the newly created \hyperlink{structstp__gain}{stp\+\_\+gain} object ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structstp__gain_a2405b0c38009081fd715433b07971946}\label{structstp__gain_a2405b0c38009081fd715433b07971946}} 
+\index{stp\+\_\+gain@{stp\+\_\+gain}!stp\+\_\+gain\+\_\+perform@{stp\+\_\+gain\+\_\+perform}}
+\index{stp\+\_\+gain\+\_\+perform@{stp\+\_\+gain\+\_\+perform}!stp\+\_\+gain@{stp\+\_\+gain}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+perform()}{stp\_gain\_perform()}}
+{\footnotesize\ttfamily void stp\+\_\+gain\+\_\+perform (\begin{DoxyParamCaption}\item[{\hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$}]{x,  }\item[{S\+T\+P\+\_\+\+I\+N\+P\+U\+T\+V\+E\+C\+T\+OR $\ast$}]{in,  }\item[{\hyperlink{stp__defines_8h_a58d557086e49ac00da395104c8fb500b}{S\+T\+P\+\_\+\+O\+U\+T\+P\+U\+T\+V\+E\+C\+T\+OR} $\ast$}]{out,  }\item[{int}]{vector\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Performs the level adjustment in realtime ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My gain object ~\newline
+ \\
+\hline
+{\em in} & The input vector ~\newline
+ \\
+\hline
+{\em out} & The output vector ~\newline
+ \\
+\hline
+{\em vector\+Size} & The vector\+Size ~\newline
+ The function stp\+\_\+gain\+\_\+perform performs the gain adjustment of ~\newline
+ the incoming signal and copies the result to the output vector ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structstp__gain_a40ce3451f3a3bf7bc7fe73e84d0cdfbe}\label{structstp__gain_a40ce3451f3a3bf7bc7fe73e84d0cdfbe}} 
+\index{stp\+\_\+gain@{stp\+\_\+gain}!stp\+\_\+gain\+\_\+set\+Level@{stp\+\_\+gain\+\_\+set\+Level}}
+\index{stp\+\_\+gain\+\_\+set\+Level@{stp\+\_\+gain\+\_\+set\+Level}!stp\+\_\+gain@{stp\+\_\+gain}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+set\+Level()}{stp\_gain\_setLevel()}}
+{\footnotesize\ttfamily void stp\+\_\+gain\+\_\+set\+Level (\begin{DoxyParamCaption}\item[{\hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$}]{x,  }\item[{float}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Sets the gain parameter ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My gain object ~\newline
+ \\
+\hline
+{\em level} & The gain value ~\newline
+ The function sets the level parameter of ~\newline
+ the gain class \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structstp__gain_a450c3ab9b94a4663caad892b7193b547}\label{structstp__gain_a450c3ab9b94a4663caad892b7193b547}} 
+\index{stp\+\_\+gain@{stp\+\_\+gain}!level@{level}}
+\index{level@{level}!stp\+\_\+gain@{stp\+\_\+gain}}
+\subsubsection{\texorpdfstring{level}{level}}
+{\footnotesize\ttfamily float level}
+
+parameter for adjusting the level of the incoming signal 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{stp__gain_8h}{stp\+\_\+gain.\+h}\end{DoxyCompactItemize}

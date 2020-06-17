@@ -1,0 +1,159 @@
+\hypertarget{structstp__gain__tilde}{}\section{stp\+\_\+gain\+\_\+tilde Struct Reference}
+\label{structstp__gain__tilde}\index{stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}}
+
+
+The Pure Data struct of the stp\+\_\+gain$\sim$ object. ~\newline
+  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structstp__gain__tilde_aec9b618f42517cd6740f1d37dba87d0a}\label{structstp__gain__tilde_aec9b618f42517cd6740f1d37dba87d0a}} 
+\hyperlink{struct__text}{t\+\_\+object} {\bfseries x\+\_\+obj}
+\item 
+\mbox{\Hypertarget{structstp__gain__tilde_a3b27de018058e7941a2f36d7a28c2cda}\label{structstp__gain__tilde_a3b27de018058e7941a2f36d7a28c2cda}} 
+t\+\_\+sample {\bfseries f}
+\item 
+\mbox{\Hypertarget{structstp__gain__tilde_a1d5e326cc46d7e26d058daf85c5d9cb5}\label{structstp__gain__tilde_a1d5e326cc46d7e26d058daf85c5d9cb5}} 
+\hyperlink{structstp__gain}{stp\+\_\+gain} $\ast$ {\bfseries gain}
+\item 
+\mbox{\Hypertarget{structstp__gain__tilde_a355caa0c783dd907f180108bc18121fa}\label{structstp__gain__tilde_a355caa0c783dd907f180108bc18121fa}} 
+t\+\_\+outlet $\ast$ {\bfseries x\+\_\+out}
+\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+t\+\_\+int $\ast$ \hyperlink{structstp__gain__tilde_a1c7d55f58651664bf47911a741858a89}{stp\+\_\+gain\+\_\+tilde\+\_\+perform} (t\+\_\+int $\ast$w)
+\begin{DoxyCompactList}\small\item\em Calculates the volume adjusted output vector~\newline
+ \end{DoxyCompactList}\item 
+void \hyperlink{structstp__gain__tilde_a44e6490aca114bc89548d4ec316638eb}{stp\+\_\+gain\+\_\+tilde\+\_\+dsp} (\hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} $\ast$x, \hyperlink{struct__signal}{t\+\_\+signal} $\ast$$\ast$sp)
+\begin{DoxyCompactList}\small\item\em Adds stp\+\_\+gain\+\_\+tilde\+\_\+perform to the signal chain. ~\newline
+ \end{DoxyCompactList}\item 
+void \hyperlink{structstp__gain__tilde_ac6dcde965f8cb9e6576179047f7951fe}{stp\+\_\+gain\+\_\+tilde\+\_\+free} (\hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Frees our object. ~\newline
+ \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{structstp__gain__tilde_abd7b5011b953f4fe73564886bc67c984}{stp\+\_\+gain\+\_\+tilde\+\_\+new} (t\+\_\+floatarg f)
+\begin{DoxyCompactList}\small\item\em Creates a new \hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} object.~\newline
+ \end{DoxyCompactList}\item 
+void \hyperlink{structstp__gain__tilde_a724fa7ba5f9d719d188b109f207c7f9b}{stp\+\_\+gain\+\_\+tilde\+\_\+set\+Level} (\hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} $\ast$x, float level)
+\begin{DoxyCompactList}\small\item\em Sets the gain adjustment parameter. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structstp__gain__tilde_adbd573ae6f50fce3a78fc4dafb58c469}\label{structstp__gain__tilde_adbd573ae6f50fce3a78fc4dafb58c469}} 
+void \hyperlink{structstp__gain__tilde_adbd573ae6f50fce3a78fc4dafb58c469}{stp\+\_\+gain\+\_\+tilde\+\_\+setup} (void)
+\begin{DoxyCompactList}\small\item\em Setup of \hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\tt Pure Data Docs } ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Pure Data struct of the stp\+\_\+gain$\sim$ object. ~\newline
+ 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structstp__gain__tilde_a44e6490aca114bc89548d4ec316638eb}\label{structstp__gain__tilde_a44e6490aca114bc89548d4ec316638eb}} 
+\index{stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}!stp\+\_\+gain\+\_\+tilde\+\_\+dsp@{stp\+\_\+gain\+\_\+tilde\+\_\+dsp}}
+\index{stp\+\_\+gain\+\_\+tilde\+\_\+dsp@{stp\+\_\+gain\+\_\+tilde\+\_\+dsp}!stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+tilde\+\_\+dsp()}{stp\_gain\_tilde\_dsp()}}
+{\footnotesize\ttfamily void stp\+\_\+gain\+\_\+tilde\+\_\+dsp (\begin{DoxyParamCaption}\item[{\hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} $\ast$}]{x,  }\item[{\hyperlink{struct__signal}{t\+\_\+signal} $\ast$$\ast$}]{sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Adds stp\+\_\+gain\+\_\+tilde\+\_\+perform to the signal chain. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer the \hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} object ~\newline
+ \\
+\hline
+{\em sp} & A pointer the input and output vectors ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\tt Pure Data Docs } ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structstp__gain__tilde_ac6dcde965f8cb9e6576179047f7951fe}\label{structstp__gain__tilde_ac6dcde965f8cb9e6576179047f7951fe}} 
+\index{stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}!stp\+\_\+gain\+\_\+tilde\+\_\+free@{stp\+\_\+gain\+\_\+tilde\+\_\+free}}
+\index{stp\+\_\+gain\+\_\+tilde\+\_\+free@{stp\+\_\+gain\+\_\+tilde\+\_\+free}!stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+tilde\+\_\+free()}{stp\_gain\_tilde\_free()}}
+{\footnotesize\ttfamily void stp\+\_\+gain\+\_\+tilde\+\_\+free (\begin{DoxyParamCaption}\item[{\hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Frees our object. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer the \hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} object ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\tt Pure Data Docs } ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structstp__gain__tilde_abd7b5011b953f4fe73564886bc67c984}\label{structstp__gain__tilde_abd7b5011b953f4fe73564886bc67c984}} 
+\index{stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}!stp\+\_\+gain\+\_\+tilde\+\_\+new@{stp\+\_\+gain\+\_\+tilde\+\_\+new}}
+\index{stp\+\_\+gain\+\_\+tilde\+\_\+new@{stp\+\_\+gain\+\_\+tilde\+\_\+new}!stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+tilde\+\_\+new()}{stp\_gain\_tilde\_new()}}
+{\footnotesize\ttfamily void $\ast$ stp\+\_\+gain\+\_\+tilde\+\_\+new (\begin{DoxyParamCaption}\item[{t\+\_\+floatarg}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Creates a new \hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} object.~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & Sets the initial gain value. ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\tt Pure Data Docs } ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structstp__gain__tilde_a1c7d55f58651664bf47911a741858a89}\label{structstp__gain__tilde_a1c7d55f58651664bf47911a741858a89}} 
+\index{stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}!stp\+\_\+gain\+\_\+tilde\+\_\+perform@{stp\+\_\+gain\+\_\+tilde\+\_\+perform}}
+\index{stp\+\_\+gain\+\_\+tilde\+\_\+perform@{stp\+\_\+gain\+\_\+tilde\+\_\+perform}!stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+tilde\+\_\+perform()}{stp\_gain\_tilde\_perform()}}
+{\footnotesize\ttfamily t\+\_\+int $\ast$ stp\+\_\+gain\+\_\+tilde\+\_\+perform (\begin{DoxyParamCaption}\item[{t\+\_\+int $\ast$}]{w }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Calculates the volume adjusted output vector~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & A pointer to the object, input and output vectors. ~\newline
+ For more information please refer to the Pure Data Docs ~\newline
+ The function calls the stp\+\_\+gain\+\_\+perform method. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the signal chain right behind the \hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} object. ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structstp__gain__tilde_a724fa7ba5f9d719d188b109f207c7f9b}\label{structstp__gain__tilde_a724fa7ba5f9d719d188b109f207c7f9b}} 
+\index{stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}!stp\+\_\+gain\+\_\+tilde\+\_\+set\+Level@{stp\+\_\+gain\+\_\+tilde\+\_\+set\+Level}}
+\index{stp\+\_\+gain\+\_\+tilde\+\_\+set\+Level@{stp\+\_\+gain\+\_\+tilde\+\_\+set\+Level}!stp\+\_\+gain\+\_\+tilde@{stp\+\_\+gain\+\_\+tilde}}
+\subsubsection{\texorpdfstring{stp\+\_\+gain\+\_\+tilde\+\_\+set\+Level()}{stp\_gain\_tilde\_setLevel()}}
+{\footnotesize\ttfamily void stp\+\_\+gain\+\_\+tilde\+\_\+set\+Level (\begin{DoxyParamCaption}\item[{\hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} $\ast$}]{x,  }\item[{float}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Sets the gain adjustment parameter. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer the \hyperlink{structstp__gain__tilde}{stp\+\_\+gain\+\_\+tilde} object ~\newline
+ \\
+\hline
+{\em level} & Sets the level parameter ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\tt Pure Data Docs } ~\newline
+ \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{stp__gain__pd_8c}{stp\+\_\+gain\+\_\+pd.\+c}\end{DoxyCompactItemize}
