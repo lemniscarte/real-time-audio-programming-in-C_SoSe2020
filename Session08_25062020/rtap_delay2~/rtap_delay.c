@@ -14,7 +14,6 @@
 
 #include "m_pd.h"
 #include "vas_delay.h"
-#include "vas_iir_lowpass.h"
 
 static t_class *rtap_delay2_tilde_class;
 
