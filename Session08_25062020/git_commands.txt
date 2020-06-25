@@ -12,13 +12,13 @@ $ touch README.md
 Add file to index:
 $ git add README.md
 
-Add all (added/changed) files to index:
+Add all (added/changed) files at ones to index:
 $ git add .
 
 Commit the added file(s) to the HEAD
 $ git commit -m "README added - first commit"
 
-Connect local repo with server:
+Connect local repo with server (remote git name must be same as local git name):
 $ git remote add origin <server_address>
 
 Change remote URL:
