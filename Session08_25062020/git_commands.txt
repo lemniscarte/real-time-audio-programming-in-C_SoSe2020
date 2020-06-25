@@ -47,7 +47,7 @@ $ git checkout -b WORKING_COPY
 Double check where you are:
 $ git status
 
-After your daywork all is fine and you maybe want to merge your work into your FEATURE_BRANCH
+After your daywork all is fine and you maybe want to merge into your FEATURE_BRANCH, first switch into your BRANCH_TO_MERGE_IN with
 $ git checkout FEATURE_BRANCH
 $ git merge WORKING_COPY
 
