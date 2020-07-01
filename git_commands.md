@@ -1,7 +1,7 @@
 
 # GIT COMMANDS 
 
-## Initialize a local git
+## Initialize a local git and commit
 New git
 
 `$ mkdir MY_PROJECT && cd MY_PROJECT`
@@ -29,8 +29,7 @@ Commit the added file(s) to the HEAD
 `$ git commit -m "README added - first commit"`
 
 
-### Connect your local git with a server
-
+## Connect your local git with a server
 Connect local repo with server (remote git name must be same as local git name).
 
 `$ git remote add origin <server_address>`
@@ -59,9 +58,8 @@ When you are beginning your work, first make get a fresh copy
 `$ git pull`
 
 
-### Make a branch
-
-Its good practice to have at least this minimal structure: MASTER -> DEVELOPMENT -> FEATURE
+## Make a branch
+Its good practice to have at least this minimal structure: MASTER <---> DEVELOPMENT <---> FEATURE
 
   * The master branch should always contain working minor versions
   * The development branch holds the working new features, that are not published or merged into the master branch
@@ -69,7 +67,7 @@ Its good practice to have at least this minimal structure: MASTER -> DEVELOPMENT
 
 
 ``` shell
-$ git branch development
+$ git branch DEVELOPMENT_BRANCH
 $ git branch FEATURE_BRANCH
 ```
 
@@ -109,7 +107,7 @@ Show changes.
 
 `$ git diff FEATURE_BRANCH WORKING_COPY`
 
-### Removing  uncommited changes
+## Removing  uncommited changes
 In the case, you try want to remove all untracked changes in your BRANCH.
 
 `$ git checkout -- *`
@@ -118,8 +116,9 @@ Or just the changes in one file.
 
 $ git checkout -- FILE_NAME
 
-## Removing  commited changes:
-#### First view history and get the hash of your commit(s)
+## Removing  commited changes
+First view history and get the hash of your commit(s)
+
 `$ git log`
 
 `$ git log --stat`
@@ -140,7 +139,7 @@ or with showing branches and merges in ASCII.
 
 
 
-#### Filter in time
+### Filter in time
 `$ git log --since=1.weeks`
 
 `$ git log --since=2.days`
@@ -152,7 +151,7 @@ or with showing branches and merges in ASCII.
 `$ git log --pretty=format:"%h - %an, %ar : %s"  --graph --since=2.days`
 
 
-#### Show the last commit
+### Show the last commit
 `$ git rev-parse --short HEAD` or 
 
 `$ git show -s --format=%h` or
@@ -164,27 +163,30 @@ or with showing branches and merges in ASCII.
 `$ git show -s --format=%H` for full hash
 
 
-#### You can make a own shortcut(s)
+### You can make a own shortcut(s)
 `$ git config --global alias.lastcommit "rev-parse HEAD`
 
 `$ git lastcommit`
 
-#### Reset vs. revert
-`$ git reset HASH_OF_AN_EARLIER_COMMIT` all later commit will be gone, you can just go back - history changed (private branch only)
+### Reset vs. revert
+All later commit will be gone, you can just go back - history changed (private branch only).
 
-`$ git revert HASH_OF_AN_EARLIER_COMMIT` you make a new commit with the content of the earlier commit, all commits in between stay saved (recommended) - history not changed (good practice on public branch)
+`$ git reset HASH_OF_AN_EARLIER_COMMIT` 
 
-#### Now go back to an earlier commit
-choose your commit, copy the hash
+You make a new commit with the content of the earlier commit, all commits in between stay saved (recommended) - history not changed (good practice on public branch).
+`$ git revert HASH_OF_AN_EARLIER_COMMIT` 
+
+### Now go back to an earlier commit
+Choose your commit, copy the hash.
 
 `$ git log --pretty=format:"%h - %an, %ar : %s"  --graph`
 
 
-#### Just switching without making any changes
+### Just switching without making any changes
 `$ git checkout HASH_OF_COMMIT_TO_GO_BACK`
 
 
-#### Reset
+### Reset
 `$ git checkout BRANCH`
 `$ git reset HEAD~2`
 
@@ -236,29 +238,12 @@ If you running in conflicts, use
 `git mergetool` to fix them
 
 
-This changes the history and should NOT be done on public scope
+
+
 to be continued...
 
 
 
-
-
-
-
-
-
-
-
-*   03b9307 - mrmarkuese, 19 minutes ago : Merge branch 'feature' of https://github.com/mrmarkuese/my_project into feature
-|\  
-| * 56d0013 - mrmarkuese, 50 minutes ago : nix
-* | 14bb1f9 - mrmarkuese, 23 minutes ago : reset
-|/  
-* 796bcf4 - mrmarkuese, 2 hours ago : ok
-* 6b65a31 - mrmarkuese, 3 hours ago : update feature bug
-* 718dc31 - mrmarkuese, 3 hours ago : update bug
-* adf513f - mrmarkuese, 3 hours ago : bug added
-* 7b2135f - mrmarkuese, 6 days ago : README added
 
 
 
