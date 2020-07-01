@@ -91,21 +91,23 @@ After your work all is fine and you want to merge into your `FEATURE_BRANCH`, fi
 
 `$ git checkout FEATURE_BRANCH`
 
+Show changes.
+
+`$ git diff FEATURE_BRANCH WORKING_COPY`
+
+Merge WORKING_COPY into FEATURE_BRANCH.
+
 `$ git merge WORKING_COPY`
-
-
-First you could check if there are more branches that are not merged already.
-
-`$ git branch --no-merged`
 
 
 If you want, you can delete your WORKING_COPY.
 
 `$ git branch -d WORKING_COPY`
 
-Show changes.
 
-`$ git diff FEATURE_BRANCH WORKING_COPY`
+Check if there are more branches that are not merged already.
+
+`$ git branch --no-merged`
 
 ## Removing  uncommited changes
 In the case, you try want to remove all untracked changes in your BRANCH.
