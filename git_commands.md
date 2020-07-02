@@ -2,7 +2,7 @@
 # GIT COMMANDS 
 
 ## Initialize a local git and commit
-New git
+New git.
 
 `$ mkdir MY_PROJECT && cd MY_PROJECT`
 
@@ -47,19 +47,19 @@ Show your remote connection.
 
 
 
-Till now, all is proceeded locally
-Loading the files to the server to make them available for others.
+Till now, all is proceeded locally.
+Loading the files to the server will make them available for others.
 
 `$ git push origin master`
 
 
-When you are beginning your work, first make get a fresh copy
+At beginning your work, get a fresh copy first.
 
 `$ git pull`
 
 
 ## Make a branch
-Its good practice to have at least this minimal structure: MASTER <---> DEVELOPMENT <---> FEATURE
+Its good practice to have at least this minimal structure: MASTER <---> DEVELOPMENT <---> FEATURE.
 
   * The master branch should always contain working minor versions
   * The development branch holds the working new features, that are not published or merged into the master branch
@@ -87,7 +87,7 @@ Double check where you are.
 `$ git status`
 
 
-After your work all is fine and you want to merge into your `FEATURE_BRANCH`, first switch into your branch you wish to merge in.
+After your work all is fine and you may wish to merge into your `FEATURE_BRANCH`, first switch into your branch you wish to merge in.
 
 `$ git checkout FEATURE_BRANCH`
 
@@ -119,7 +119,7 @@ Or just the changes in one file.
 $ git checkout -- FILE_NAME
 
 ## Removing  commited changes
-First view history and get the hash of your commit(s)
+First view history and get the hash of your commit(s).
 
 `$ git log`
 
@@ -171,12 +171,14 @@ or with showing branches and merges in ASCII.
 `$ git lastcommit`
 
 ### Reset vs. revert
-All later commit will be gone, you can just go back - history changed (private branch only).
+All later commit(s) will be gone, you can just go back - history will be changed (use on private branch only).
 
 `$ git reset HASH_OF_AN_EARLIER_COMMIT` 
 
+
 You make a new commit with the content of the earlier commit, all commits in between stay saved (recommended) - history not changed (good practice on public branch).
 `$ git revert HASH_OF_AN_EARLIER_COMMIT` 
+
 
 ### Now go back to an earlier commit
 Choose your commit, copy the hash.
@@ -194,33 +196,33 @@ Choose your commit, copy the hash.
 
 
 ### Stash
-The phone rings in the middle of your work, and you have to do some fixes in another branch, but you are not ready to commit your work now
+Sitauation: The phone rings in the middle of your work and you'll have to do some fixes at another branch. If you are not ready to commit your work now, you can stash it.
 
 `$ git stash`
 
-Now you want to turn back to your work
+Later, you can return to your work.
 
 `$ git stash pop`
 
 
-Show your stashes
+If you don'nt remember, you can list your stashes.
 
 `$ git stash list`
 
 
-Show diffs of your stashes
+Show diffs of your stashes.
 
 `$ git stash show --patch`
 
-Make a new branch from stash
+Of course you can make a new branch from stash too.
 
 `$ git stash branch NEW_BRANCH_NAME stash@{1}`
 
-Clean
+If you want discard a stash you can drop it ...
 
 `$ git stash drop stash@{1}`
 
-or remove all at ones
+... or remove all stashes at ones.
 
 `$ git stash clear`
 
@@ -237,7 +239,7 @@ With `rebase` you can move branches and merge them in one step into a new base t
 
 If you running in conflicts, use 
 
-`git mergetool` to fix them
+`git mergetool` to fix them.
 
 
 
