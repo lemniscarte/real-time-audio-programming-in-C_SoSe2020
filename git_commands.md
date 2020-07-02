@@ -116,7 +116,8 @@ In the case, you try want to remove all untracked changes in your BRANCH.
 
 Or just the changes in one file.
 
-$ git checkout -- FILE_NAME
+`$ git checkout -- FILE_NAME`
+
 
 ## Removing  commited changes
 First view history and get the hash of your commit(s).
