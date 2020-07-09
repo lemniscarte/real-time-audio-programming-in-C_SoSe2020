@@ -1,6 +1,7 @@
 /**
  * @file rtap_delay_pd.c
  * @author Thomas Resch <br>
+ * @author changed by Markus Hädrich <br>
  * Audiocommunication Group, Technical University Berlin <br>
  * University of Applied Sciences Nordwestschweiz (FHNW), Music-Academy, Research and Development <br>
  * A gain object for pure data <br>

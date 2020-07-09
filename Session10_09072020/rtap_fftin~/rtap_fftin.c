@@ -64,7 +64,7 @@ t_int *rtap_fftin_tilde_perform(t_int *w)
     mayer_realfft(n, in);  // calculates n+1 real and n-1 imaginary parts in-place
                            // n = 0 is DC and n = n2 is nyquist frequency
                            // both have no imaginary parts
-    for(int i = 0;i < n; i++)
+    for (int i = 0; i < n; i++)
         *tmpPtr++ = *in++; // copy input in case in = outL which is usually the case
     
     memset(outL+n2+1, 0, (n2-1) * sizeof(float)); // set everything else to zero
@@ -151,7 +151,7 @@ void rtap_fftin_tilde_setup(void)
 
       class_addmethod(rtap_fftin_tilde_class, (t_method)rtap_fftin_tilde_dsp, gensym("dsp"), 0);
 
-      // this adds the gain message to our object
-
+      
+      // declares, that the class will use signal-inlets
       CLASS_MAINSIGNALIN(rtap_fftin_tilde_class, rtap_fftin_tilde, f);
 }

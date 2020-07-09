@@ -1,7 +1,7 @@
 /**
  * @file rtap_delay_pd.c
  * @author Thomas Resch <br>
- * @author Markus Hädrich <br>
+ * @author changed by Markus Hädrich <br>
  * Audiocommunication Group, Technical University Berlin <br>
  * University of Applied Sciences Nordwestschweiz (FHNW), Music-Academy, Research and Development <br>
  * A gain object for pure data <br>
@@ -105,7 +105,7 @@ void rtap_delay10_tilde_free(rtap_delay10_tilde *x)
  * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
  */
 
-void *rtap_delay10_tilde_new(t_floatarg delay_in_sec, t_floatarg gain, t_floatarg pan)
+void *rtap_delay10_tilde_new(t_floatarg f, t_floatarg delay_in_sec, t_floatarg gain, t_floatarg pan)
 {
     rtap_delay10_tilde *x = (rtap_delay10_tilde *)pd_new(rtap_delay10_tilde_class);
     

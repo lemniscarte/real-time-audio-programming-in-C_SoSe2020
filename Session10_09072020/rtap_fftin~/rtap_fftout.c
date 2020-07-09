@@ -23,6 +23,7 @@ static t_class *rtap_fftout_tilde_class;
  * @brief The Pure Data struct of the rtap_delay~ object. <br>
  * @var rtap_fftout_tilde::x_obj Necessary for every signal object in Pure Data <br>
  * @var rtap_fftout_tilde::f Also necessary for signal objects, float dummy dataspace <br>
+ * @var rtap_fftin_tilde::tmp A tmp float buffer.<br>
  * for converting a float to signal if no signal is connected (CLASS_MAINSIGNALIN) <br>
  * @var rtap_fftout_tilde::inR Right inlet for imaginary input <br>
  * @var rtap_fftout_tilde::outtL Outlet for time domain signal.
@@ -61,12 +62,12 @@ t_int *rtap_fftout_tilde_perform(t_int *w)
     int n2 = (n>>1);
     
     float *tmpPtr = x->tmp; // copying real part to tmp
-    for(int i = 0;i < n2+1; i++)
+    for (int i = 0; i < n2+1; i++)
         *tmpPtr++ = *inL++;
     
-    inR+= n2-1;  // move right inlet vector pointer to the end, because the mayer_realifft()
+    inR += n2-1;  // move right inlet vector pointer to the end, because the mayer_realifft()
                  // needs the imag part written backwards
-    for(int i = 0; i<n2-1; i++)
+    for (int i = 0; i < n2-1; i++)
         *tmpPtr++ = *inR--; // copying imag part backwards to tmp
     
     mayer_realifft(n, x->tmp);  // calculating ifft
@@ -116,11 +117,11 @@ void rtap_fftout_tilde_free(rtap_fftout_tilde *x)
 void *rtap_fftout_tilde_new(t_floatarg f)
 {
     rtap_fftout_tilde *x = (rtap_fftout_tilde *)pd_new(rtap_fftout_tilde_class);
-
+    // The main inlet is created automatically
+    
     x->tmp = vas_mem_alloc(sizeof(float) * MAXFFTSIZE);
     x->inR = inlet_new(&x->x_obj, &x->x_obj.ob_pd, &s_signal, &s_signal);
     
-    //The main inlet is created automatically
     x->outL = outlet_new(&x->x_obj, &s_signal);
     return (void *)x;
 }
@@ -142,7 +143,6 @@ void rtap_fftout_tilde_setup(void)
 
       class_addmethod(rtap_fftout_tilde_class, (t_method)rtap_fftout_tilde_dsp, gensym("dsp"), 0);
 
-      // this adds the gain message to our object
-
+      // declares, that the class will use signal-inlets
       CLASS_MAINSIGNALIN(rtap_fftout_tilde_class, rtap_fftout_tilde, f);
 }
