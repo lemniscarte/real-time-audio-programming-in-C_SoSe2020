@@ -36,8 +36,8 @@ typedef struct rtap_fftin_tilde
     
     float *tmp;
 
-    t_outlet *outL;
-    t_outlet *outR;
+    t_outlet *outL; // Holds real part
+    t_outlet *outR; // Holds imag part
 
 } rtap_fftin_tilde;
 
@@ -58,19 +58,32 @@ t_int *rtap_fftin_tilde_perform(t_int *w)
     t_sample  *outL =  (t_sample *)(w[3]);
     t_sample  *outR =  (t_sample *)(w[4]);
     int n =  (int)(w[5]);
-    int n2 = (n>>1);
+    int n2 = (n>>1);        // half frame n2 = n/2
     
-    float *tmpPtr = x->tmp;
-    mayer_realfft(n, in);  // calculates n+1 real and n-1 imaginary parts in-place
+    float *tmpPtr = x->tmp; // get tmp ptr to buffer to work with
+    // Note: for *in and *outL is often used the same address, because for in-place calculation no data copy in needed, thats why we need to copy the input data to show what happens in this example.   (Miller Puckette does this all in-place: https://github.com/pure-data/pure-data/blob/master/src/d_fft.c)
+    
+    mayer_realfft(n, in);  // calculates n2+1 real and n2-1 imaginary parts in-place
                            // n = 0 is DC and n = n2 is nyquist frequency
-                           // both have no imaginary parts
-                           // For more information about mayer fft please refer: https://github.com/Venetian/MayerFFT
+                           // both have no imaginary parts in real fft
+    
+// a 2^n point real FFT can be reduced to a 2^(n-1) point complex FFT:
+//
+//    **    mayer_realfft(n,real)
+//    **    Does a real-valued fourier transform of "n" points of the
+//    **    "real" array.  The real part of the transform ends
+//    **    up in the first half of the array and the imaginary part of the
+//    **    transform ends up in the second half of the array.
+//
+// For more information about mayer fft please refer: https://github.com/Venetian/MayerFFT
+    
     for (int i = 0; i < n; i++)
         *tmpPtr++ = *in++; // copy input in case in = outL which is usually the case
     
+    // Clear memory from possible trash data
     memset(outL+n2+1, 0, (n2-1) * sizeof(float)); // set everything else to zero
-    memset(outR, 0, sizeof(float));
-    memset(outR+n2-1, 0, (n2+1) * sizeof(float));
+    memset(outR, 0, sizeof(float));               // bin 0 is DC which has no imaginary part
+    memset(outR+n2-1, 0, (n2+1) * sizeof(float)); // bin n2 is nyquist frequency which has no imaginary part
   
     float *realPtr = x->tmp;
     float *imagPtr = x->tmp+n-1; // Imag part is written backwards, so we start at the end

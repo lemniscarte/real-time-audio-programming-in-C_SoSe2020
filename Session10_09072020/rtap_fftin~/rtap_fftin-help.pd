@@ -85,6 +85,8 @@
 0.382692 0.634401 0.831476 0.956944;
 #X coords 0 -2 63 2 400 200 1 0 0;
 #X restore 1034 263 graph;
+#X text 668 394 scale the result;
+#X text 116 14 pd audio settings: F_s = 44100 Hz frame_size = 64;
 #X connect 0 0 5 0;
 #X connect 0 0 35 0;
 #X connect 1 0 2 0;
