@@ -71,6 +71,7 @@ t_int *rtap_fftout_tilde_perform(t_int *w)
         *tmpPtr++ = *inR--; // copying imag part backwards to tmp
     
     mayer_realifft(n, x->tmp);  // calculating ifft
+    // For more information about mayer fft please refer: https://github.com/Venetian/MayerFFT
                          
     tmpPtr = x->tmp;
     for (int i = 0; i < n; i++) // copying tmp to out
