@@ -196,6 +196,10 @@ Choose your commit, copy the hash.
 `$ git checkout BRANCH`
 `$ git reset HEAD~2`
 
+### Revert
+`$ git checkout BRANCH`
+`$ git revert HEAD~2`
+
 
 ### Stash
 Situation: The phone rings in the middle of your work and you are told you need to make some corrections in another branch. If you are not ready to commit your current work now, you can stash it.
