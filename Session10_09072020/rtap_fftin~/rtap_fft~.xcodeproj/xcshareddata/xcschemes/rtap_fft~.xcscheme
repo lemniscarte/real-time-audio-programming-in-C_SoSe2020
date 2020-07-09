@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
                BuildableName = "rtap_fftin~.pd_darwin"
-               BlueprintName = "rtap_fftin~"
-               ReferencedContainer = "container:rtap_fftin~.xcodeproj">
+               BlueprintName = "rtap_fft~"
+               ReferencedContainer = "container:rtap_fft~.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "E4F5403A24B61B96009FE98A"
                BuildableName = "rtap_fftout~.pd_darwin"
                BlueprintName = "rtap_fftout~"
-               ReferencedContainer = "container:rtap_fftin~.xcodeproj">
+               ReferencedContainer = "container:rtap_fft~.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
             BuildableName = "rtap_fftin~.pd_darwin"
-            BlueprintName = "rtap_fftin~"
-            ReferencedContainer = "container:rtap_fftin~.xcodeproj">
+            BlueprintName = "rtap_fft~"
+            ReferencedContainer = "container:rtap_fft~.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -85,8 +85,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
             BuildableName = "rtap_fftin~.pd_darwin"
-            BlueprintName = "rtap_fftin~"
-            ReferencedContainer = "container:rtap_fftin~.xcodeproj">
+            BlueprintName = "rtap_fft~"
+            ReferencedContainer = "container:rtap_fft~.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
