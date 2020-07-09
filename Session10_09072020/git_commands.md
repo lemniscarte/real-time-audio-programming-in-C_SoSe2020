@@ -196,7 +196,7 @@ Choose your commit, copy the hash.
 ### Reset
 `$ git checkout BRANCH`
 
-`$ git reset HEAD~1` resets to the grand-parent of the HEAD commit
+`$ git reset HEAD~1` resets to the grandparent of the HEAD commit
 
 `$ git reset HASH`   resets to the hash's commit
 
