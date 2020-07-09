@@ -172,12 +172,13 @@ or with showing branches and merges in ASCII.
 `$ git lastcommit`
 
 ### Reset vs. revert
-All later commit(s) will be gone, you can just go back - history will be changed (use on private branch only).
+With `reset` all later commit(s) will be gone, you can just go back - history will be changed (use on private branch only).
 
 `$ git reset HASH_OF_AN_EARLIER_COMMIT` 
 
 
-You make a new commit with the content of the earlier commit, all commits in between stay saved (recommended) - history not changed (good practice on public branch).
+With `revert` you will make a new commit with the content of the earlier commit, all commits in between stay saved (recommended) - history not changed (good practice on public branch).
+
 `$ git revert HASH_OF_AN_EARLIER_COMMIT` 
 
 
