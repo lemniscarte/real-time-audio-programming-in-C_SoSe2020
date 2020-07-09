@@ -61,7 +61,7 @@ t_int *rtap_fftin_tilde_perform(t_int *w)
     int n2 = (n>>1);
     
     float *tmpPtr = x->tmp;
-    mayer_realfft(n, in);  // calculates n+1 real and n-1 imaginary parts in place
+    mayer_realfft(n, in);  // calculates n+1 real and n-1 imaginary parts in-place
                            // n = 0 is DC and n = n2 is nyquist frequency
                            // both have no imaginary parts
     for(int i = 0;i < n; i++)
