@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
-               BuildableName = "rtap_fftin~.pd_darwin"
+               BuildableName = "rtap_fft~.pd_darwin"
                BlueprintName = "rtap_fft~"
                ReferencedContainer = "container:rtap_fft~.xcodeproj">
             </BuildableReference>
@@ -62,14 +62,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
-            BuildableName = "rtap_fftin~.pd_darwin"
+            BuildableName = "rtap_fft~.pd_darwin"
             BlueprintName = "rtap_fft~"
             ReferencedContainer = "container:rtap_fft~.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-open /Users/mr.markuese/Documents/TUB/Lehre/SoSe_2020/Github/real-time-audio-programming-in-C_SoSe2020/Session10_09072020/rtap_fftin~/rtap_fftin-help.pd"
+            argument = "-open /Users/mr.markuese/Documents/TUB/Lehre/SoSe_2020/Github/real-time-audio-programming-in-C_SoSe2020/Session10_09072020/rtap_fft~/rtap_fft-help.pd"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FA2927EB1A899B4C005A2BA9"
-            BuildableName = "rtap_fftin~.pd_darwin"
+            BuildableName = "rtap_fft~.pd_darwin"
             BlueprintName = "rtap_fft~"
             ReferencedContainer = "container:rtap_fft~.xcodeproj">
          </BuildableReference>
