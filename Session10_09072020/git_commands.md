@@ -181,6 +181,7 @@ With `revert` you will make a new commit with the content of the earlier commit,
 
 `$ git revert HASH_OF_AN_EARLIER_COMMIT` 
 
+You can use relative address with HEAD or a commit hash.
 
 ### Now go back to an earlier commit
 Choose your commit, copy the hash.
@@ -194,11 +195,14 @@ Choose your commit, copy the hash.
 
 ### Reset
 `$ git checkout BRANCH`
-`$ git reset HEAD~2`
+
+`$ git reset HEAD~1` resets to the grand-parent of the HEAD commit
+`$ git reset HASH`   resets to the hash's commit
 
 ### Revert
 `$ git checkout BRANCH`
-`$ git revert HEAD~2`
+`$ git revert HEAD^1` reverts to the parent of the HEAD commit
+`$ git revert HASH`   reverts to the hash's commit
 
 
 ### Stash
