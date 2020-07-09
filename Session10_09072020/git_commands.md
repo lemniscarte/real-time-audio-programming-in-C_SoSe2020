@@ -197,7 +197,7 @@ Choose your commit, copy the hash.
 
 
 ### Stash
-Situation: The phone rings in the middle of your work and you'll have to do some fixes at another branch. If you are not ready to commit your work now, you can stash it.
+Situation: The phone rings in the middle of your work and you are told you need to make some corrections in another branch. If you are not ready to commit your work now, you can stash it.
 
 `$ git stash`
 
