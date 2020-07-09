@@ -1,0 +1,89 @@
+#N canvas 316 94 1188 934 12;
+#X obj 465 202 osc~;
+#X obj 78 540 tgl 15 1 empty empty show_spectrum 17 7 0 10 -4034 -1
+-1 1 1;
+#X obj 78 581 metro 500;
+#X obj 78 612 s guiupdate;
+#X obj 371 398 r guiupdate;
+#X obj 464 273 rtap_fftin~;
+#X obj 464 328 *~;
+#X obj 538 328 *~;
+#X obj 464 365 +~;
+#X obj 464 398 sqrt~;
+#X floatatom 465 111 5 1 32 0 - - -;
+#X obj 465 140 * 44100;
+#X floatatom 510 203 20 0 0 0 - - -;
+#X obj 464 434 tabwrite~ mag;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array mag 64 float 3;
+#A 0 0.000338882 32 32 2.46382e-05 7.38333e-05 5.11181e-06 2.77805e-05
+2.28441e-06 1.35628e-05 2.20441e-06 7.05919e-06 1.18131e-06 3.76095e-06
+5.08484e-07 3.44608e-06 8.35494e-07 3.21989e-06 7.8312e-07 2.91245e-06
+4.35118e-07 2.74022e-06 4.11814e-07 2.2448e-06 2.40328e-07 1.95057e-06
+4.8877e-07 1.25233e-06 4.34253e-07 1.83385e-06 4.56642e-07 1.61843e-06
+4.37881e-08 1.2815e-06 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0;
+#X coords 0 64 32 0 400 200 1 0 0;
+#X restore 208 538 graph;
+#X obj 714 198 osc~;
+#X floatatom 714 108 5 1 32 0 - - -;
+#X obj 714 134 * 44100;
+#X floatatom 759 199 20 0 0 0 - - -;
+#X obj 465 167 / 64;
+#X obj 714 161 / 64;
+#X obj 613 433 dac~;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array sig 64 float 1;
+#A 0 2 1.97597 1.90466 1.78841 1.63099 1.43749 1.21415 0.968102 0.707108
+0.439304 0.172887 -0.0841735 -0.324424 -0.541186 -0.72879 -0.882769
+-1 -1.0788 -1.11897 -1.12175 -1.08979 -1.02696 -0.938248 -0.829477
+-0.7071 -0.577913 -0.448779 -0.326344 -0.216766 -0.125465 -0.0569019
+-0.0143975 -9.36869e-09 -0.0143989 -0.0569046 -0.125469 -0.21677 -0.326347
+-0.448782 -0.577915 -0.707102 -0.829479 -0.938249 -1.02696 -1.08978
+-1.12175 -1.11896 -1.07879 -0.999991 -0.882758 -0.728778 -0.541173
+-0.32441 -0.0841589 0.172902 0.439319 0.707123 0.968117 1.21417 1.43751
+1.631 1.78842 1.90467 1.97597;
+#X coords 0 -2 63 2 400 200 1 0 0;
+#X restore 609 538 graph;
+#X obj 679 434 tabwrite~ sig;
+#X obj 679 403 r guiupdate;
+#X obj 613 364 /~ 64;
+#X obj 613 331 rtap_fftout~;
+#X obj 465 25 loadbang;
+#X msg 465 81 1;
+#X msg 714 80 2;
+#X text 121 328 Calculating magintude from real and imag parts;
+#X text 371 274 Forward FFT;
+#X text 708 331 Inverse FFT;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 13 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 5 0 26 0;
+#X connect 5 1 7 0;
+#X connect 5 1 7 1;
+#X connect 5 1 26 1;
+#X connect 6 0 8 0;
+#X connect 7 0 8 1;
+#X connect 8 0 9 0;
+#X connect 9 0 13 0;
+#X connect 10 0 11 0;
+#X connect 11 0 19 0;
+#X connect 15 0 5 0;
+#X connect 16 0 17 0;
+#X connect 17 0 20 0;
+#X connect 19 0 0 0;
+#X connect 19 0 12 0;
+#X connect 20 0 15 0;
+#X connect 20 0 18 0;
+#X connect 24 0 23 0;
+#X connect 25 0 21 0;
+#X connect 25 0 21 1;
+#X connect 25 0 23 0;
+#X connect 26 0 25 0;
+#X connect 27 0 28 0;
+#X connect 27 0 29 0;
+#X connect 28 0 10 0;
+#X connect 29 0 16 0;
