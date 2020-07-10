@@ -159,8 +159,7 @@ Its good practice to have at least this minimal structure: MASTER <---> DEVELOPM
 
 
 ```	$ git branch DEVELOPMENT_BRANCH
-$ git branch FEATURE_BRANCH
-	```
+$ git branch FEATURE_BRANCH```
 
 
 Show all branches.
