@@ -1,6 +1,18 @@
 
 # GIT COMMANDS 
 
+Git has three main states that your files can reside in: committed, modified, and staged:
+
+* Committedmeansthatthedataissafelystoredinyourlocaldatabase.
+* Modifiedmeansthatyouhavechangedthefilebuthavenotcommittedittoyour database yet.
+* Stagedmeansthatyouhavemarkedamodifiedfileinitscurrentversiontogointo your next commit snapshot.
+
+## Basic Git Workflow 
+
+* Create a new or checkout an existing repository.- Modify/add/delete files.- Either selectively stage just those changes you want to be part of your next commit or stage all.
+* You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.
+* If working with a remote, you push local changes to the remote.
+
 ## Initialize a local git and commit
 New git.
 
@@ -29,11 +41,50 @@ Commit the added file(s) to the HEAD
 `$ git commit -m "README added - first commit"`
 
 
-## Connect your local git with a server
+## Creating a repository
+Create a remote repository via command line and/or in the Browser on github.com. Remote repository:
+
+`$ curl -u 'funkerresch' https://api.github.com/user/repos -d '{"name":"realtimeaudioprogramming"}'`
+
+*Note: You may need a password, depending on the repository setting*
+
+## The easiest way to create local and remote repository
+Create a remote repository online including readme.md
+Copy the link to the repository
+
+`$ cd TO/LOCATION/WHERE/YOU/WANT/TO/SAVE/YOUR/LOCAL/REPOSITORY` 
+
+`$ git clone https://github.com/LINKTOYOURREMOTEREPOSITORY`
+
+
+## Staging files
+Stage everything according to the local directory structure including new, modified and deleted files):
+
+`$ git add –A`
+
+Stage everything without deleted files:
+
+`$ git add .`
+
+Stage modified and deleted, without new files:
+
+`$ git add -u`
+
+Stage single files and folders:
+
+`$ git add <filename> git add <foldername>`
+	
+## Commit	
+Commit all staged files to local repository:
+
+`$ git commit –m “First Commit”` (-m for commit message)
+	
+## Connect your local git with a server or add a remote to the local repository
 Connect local repo with server (remote git name must be same as local git name).
 
 `$ git remote add origin <server_address>`
 
+`$ git remote add origin https://github.com/audio-communication-group/real-time-audio-programming-in-C_SoSe2020`
 
 Change remote URL.
 
@@ -57,8 +108,49 @@ At beginning your work, get a fresh copy first.
 
 `$ git pull`
 
+## Push, pull and clone
+Push to remote and link local repository with remote so git pull can be used without arguments:
 
-## Make a branch
+`$ git push –u origin master` (-u links the local repository with the remote)
+
+origin is an alias for the remote, only needed once, after that simply use:
+`$ git push`
+
+Download the head of the remote and merges it with your local repository:
+
+`$ git pull`
+
+Download and inits a new local repository from PATH/TO/REPOSITORY:
+
+`$ git clone PATH/TO/REPOSITORY`
+
+## Git status information to show aliases of your remote server:
+`$ git remote –v`
+
+Get general status information:
+
+`$ git status`
+
+List the commit history:
+
+`$ git log`
+
+General information about HEAD:
+
+`$ git show HEAD`
+
+
+## Gitignore
+Create `.gitignore` file with 
+
+`$ touch .gitignore` (under linux and osx it will be invisible) in the Root directory of your repository.
+
+Use nano vi or emacs for editing: 
+`$ nano .gitignore` Add, for example, the line
+`*.html` and save the file.
+Now all html files will be excluded from staging
+
+## Branches I
 Its good practice to have at least this minimal structure: MASTER <---> DEVELOPMENT <---> FEATURE.
 
   * The master branch should always contain working minor versions
@@ -66,10 +158,9 @@ Its good practice to have at least this minimal structure: MASTER <---> DEVELOPM
   * The feature branch(es) are holding separated features under development
 
 
-``` shell
-$ git branch DEVELOPMENT_BRANCH
+```	$ git branch DEVELOPMENT_BRANCH
 $ git branch FEATURE_BRANCH
-```
+	```
 
 
 Show all branches.
@@ -104,10 +195,47 @@ If you want, you can delete your WORKING_COPY.
 
 `$ git branch -d WORKING_COPY`
 
+Delete local branch (force).
+
+`$ git branch -D WORKING_COPY`
+
+Delete the remote WORKING_COPY.
+
+`$ git push origin --delete WORKING_COPY`
 
 Check if there are more branches that are not merged already.
 
 `$ git branch --no-merged`
+
+## Branches II
+To check out commit id and create a new branch of it.
+
+`$ git checkout -b <NEW BRANCH> <COMMITID>`
+	
+To check out X commits before HEAD and create new branch of it.
+
+`$ git checkout –b <NEW BRANCH> HEAD~X`
+	
+Get information about X commits before HEAD.
+
+`$ git show HEAD~X`
+
+## Submodules
+Add a submodule to your repository.
+
+`$ git submodule add PATH/TO/SUBMODULE`
+
+Remove submodule from your repository.
+
+```$ git submodule deinit <path_to_submodule> 
+$ git rm <path_to_submodule>`
+$ git commit-m "Removed submodule"
+```
+
+Remove submodule from directory.
+
+`$ rm -rf .git/modules/<path_to_submodule>`
+
 
 ## Removing  uncommited changes
 In the case, you try want to remove all untracked changes in your BRANCH.
@@ -252,7 +380,7 @@ With `rebase` you can move branches and merge them in one step into a new base t
 
 If you running in conflicts, use 
 
-`git mergetool` to fix them.
+`$ git mergetool` to fix them.
 
 
 
@@ -261,7 +389,7 @@ to be continued...
 
 
 
-
+useful link: https://rogerdudler.github.io/git-guide/index.de.html
 
 
 
