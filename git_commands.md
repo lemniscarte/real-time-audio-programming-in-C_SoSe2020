@@ -227,8 +227,9 @@ Add a submodule to your repository.
 
 Remove submodule from your repository.
 
-```$ git submodule deinit <path_to_submodule> 
-$ git rm <path_to_submodule>`
+
+```$ git submodule deinit <path_to_submodule>
+$ git rm <path_to_submodule>
 $ git commit-m "Removed submodule"
 ```
 
