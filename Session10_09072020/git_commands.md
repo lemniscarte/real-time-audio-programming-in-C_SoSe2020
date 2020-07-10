@@ -167,7 +167,7 @@ or with showing branches and merges in ASCII.
 
 
 ### You can make a own shortcut(s)
-`$ git config --global alias.lastcommit "rev-parse HEAD`
+`$ git config --global alias.lastcommit "rev-parse HEAD"`
 
 `$ git lastcommit`
 
