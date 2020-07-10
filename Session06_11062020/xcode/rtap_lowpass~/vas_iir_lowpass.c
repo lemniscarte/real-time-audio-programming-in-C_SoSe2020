@@ -35,15 +35,20 @@ void vas_iir_lowpass_free (vas_iir_lowpass *x)
     vas_mem_free(x);
 }
 
+
+
+// corrected bug in calculating feedback var
 void vas_iir_lowpass_process(vas_iir_lowpass *x, VAS_INPUTBUFFER *in, VAS_OUTPUTBUFFER *out, int vectorSize)
 {
     int n = 0;
     float last = x->lastValue;
     float coef = x->coefficient;
-    float feedback = 0.5;
-    
+    float feedback = 1 - coef;
+
     while(n++ < vectorSize)
         last =  *out++ = coef * *in++ + feedback * last;
-   
+
     x->lastValue = last;
 }
+
+
