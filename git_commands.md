@@ -229,14 +229,14 @@ Remove submodule from your repository.
 
 
 ```
-$ git submodule deinit <path_to_submodule>
-$ git rm <path_to_submodule>
+$ git submodule deinit PATH_TO_SUBMODULE
+$ git rm PATH_TO_SUBMODULE
 $ git commit-m "Removed submodule"
 ```
 
 Remove submodule from directory.
 
-`$ rm -rf .git/modules/<path_to_submodule>`
+`$ rm -rf .git/modules/PATH_TO_SUBMODULE`
 
 
 ## Removing  uncommited changes
