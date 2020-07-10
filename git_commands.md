@@ -158,8 +158,8 @@ Its good practice to have at least this minimal structure: MASTER <---> DEVELOPM
   * The feature branch(es) are holding separated features under development
 
 
-```	$ git branch DEVELOPMENT_BRANCH
-$ git branch FEATURE_BRANCH```
+`$ git branch DEVELOPMENT_BRANCH`
+`$ git branch FEATURE_BRANCH`
 
 
 Show all branches.
