@@ -245,7 +245,7 @@ Situation: While you're working on your feature, the master is updated by someon
 Now you want to integrate the new master updates into your feature branch.
 With `rebase` you can move branches and merge them in one step into a new base to make the history linear again. 
 
-*Note: This will change the history and should only done on your local branch*
+*Note: This will change the history and should only be done at your local branch*
 
 `$ git rebase <base>`
 
