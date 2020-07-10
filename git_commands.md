@@ -377,7 +377,7 @@ With `rebase` you can move branches and merge them in one step into a new base t
 
 *Note: This will change the history and should only be done at your local branch*
 
-`$ git rebase <base>`
+`$ git rebase MASTER_BASE`
 
 
 If you running in conflicts, use 
