@@ -54,7 +54,7 @@ Copy the link to the repository
 
 `$ cd TO/LOCATION/WHERE/YOU/WANT/TO/SAVE/YOUR/LOCAL/REPOSITORY` 
 
-`$ git clone https://github.com/LINKTOYOURREMOTEREPOSITORY`
+`$ git clone https://github.com/LINK/TO/YOUR/REMOTE/REPOSITORY`
 
 
 ## Staging files
@@ -107,6 +107,28 @@ Loading the files to the server will make them available for others.
 At beginning your work, get a fresh copy first.
 
 `$ git pull`
+
+## Delete remote
+View current remotes
+
+`$ git remote -v`
+
+
+> origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+> origin  https://github.com/OWNER/REPOSITORY.git (push)
+> destination  https://github.com/FORKER/REPOSITORY.git (fetch)
+> destination  https://github.com/FORKER/REPOSITORY.git (push)
+
+Remove remote
+
+`$ git remote rm destination`
+
+Verify it's gone
+
+`$ git remote -v`
+
+> origin  https://github.com/OWNER/REPOSITORY.git (fetch)
+> origin  https://github.com/OWNER/REPOSITORY.git (push)
 
 ## Push, pull and clone
 Push to remote and link local repository with remote so git pull can be used without arguments:
@@ -328,6 +350,8 @@ Choose your commit, copy the hash.
 
 `$ git reset HEAD~1` resets to the grandparent of the HEAD commit
 
+`$ git reset HEAD^1` resets to the parent of the HEAD commit
+
 `$ git reset HASH`   resets to the hash's commit
 
 ### Revert
@@ -383,6 +407,41 @@ With `rebase` you can move branches and merge them in one step into a new base t
 If you running in conflicts, use 
 
 `$ git mergetool` to fix them.
+
+
+### Use a LAN git e. g. Raspberry Pi
+
+First: On both machines enable and configure ssh !
+
+On the LAN server (e. g. RPi):
+
+```
+$ cd /PATH/TO/GIT_DIR
+$ git init PROJECT_NAME.git --bare
+```
+
+On the local machine (e. g. your computer)
+
+```
+$ cd /PATH/
+$ git clone USER@LAN_SERVER:/PATH/TO/GIT_DIR/PROJECT_NAME.git
+$ git touch README.md
+$ git add README.md
+$ git commit -m "First commit / README added"
+$ git push
+``
+
+
+
+### Use a local git on the same machine 
+(Can be used in LAN like in example before)
+
+```
+$ cd /PATH/TO/GIT_DIR
+$ git init PROJECT_NAME.git --bare
+$ cd /PATH/TO/PROJECT_DIR
+$ git clone --local PROJECT_NAME /PATH/TO/GIT_DIR/PROJECT_NAME.git
+```
 
 
 
