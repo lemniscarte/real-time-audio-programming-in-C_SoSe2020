@@ -260,6 +260,17 @@ Remove submodule from directory.
 
 `$ rm -rf .git/modules/PATH_TO_SUBMODULE`
 
+Update submodule:
+
+```
+$ git pull --recurse-submodules
+```
+
+or
+
+```
+$ git submodule update --remote --recursive
+```
 
 ## Removing  uncommited changes
 In the case, you try want to remove all untracked changes in your BRANCH.
